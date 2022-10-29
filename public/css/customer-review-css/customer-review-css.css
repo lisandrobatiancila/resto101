@@ -1,0 +1,134 @@
+
+.customer-review-title {
+    background-color: rgb(234, 189, 54, 1);
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    position: relative;
+    border-bottom: 1px solid var(--ddColor);
+    border-radius: 5px;
+    margin-left: 30px;
+}
+.customer-review-title > .ribon-left {
+    background-color: rgb(234, 189, 54, 0.5);
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-left: -30px;
+    margin-bottom: -15px;
+    z-index: -1;
+    border-bottom-right-radius: 5px;
+}
+.customer-review-title > .ribon-left-tail {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* background-color: ; */
+    margin-left: -30px;
+    margin-bottom: -25px;
+    border-left: 25px solid var(--whiteColor);
+    border-right: 25px solid transparent;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+}
+.customer-review-title > .ribon-right {
+    background-color: rgb(234, 189, 54, 0.5);
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: -30px;
+    margin-bottom: -15px;
+    border-bottom-left-radius: 5px;
+    z-index: -1;
+}
+.customer-review-title > .ribon-right-tail {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: -40px;
+    margin-bottom: -25px;
+    border-right: 25px solid var(--whiteColor);
+    border-left: 25px solid transparent;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+}
+.review-container {
+    width: 100%;
+    height: 300px;
+    padding: 5px;
+    /* border: 1px solid var(--ddColor);
+    border-radius: 3px; */
+    position: relative;
+    overflow: none;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+}
+.review-container > .prev-review-container {
+    width: 35%;
+    /* background-color: teal; */
+    position: relative;
+}
+.review-container > .next-review-container {
+    width: 65%;
+    /* background-color: azure; */
+}
+.customer-prev-review, .customer-current-review, .customer-next-review {
+    border: 1px solid var(--ddColor);
+    border-radius: 3px;
+    background-color: var(--whiteColor);
+    float: left;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.customer-prev-review {
+    width: 50%;
+    height: 150px;
+    margin-top: 120px;
+    position: absolute;
+    right: 0;
+}
+.customer-current-review {
+    width: 50%;
+    height: 300px;
+}
+.customer-next-review {
+    width: 28%;
+    height: 150px;
+    margin-top: 120px;
+}
+.customer-prev-review:hover, .customer-current-review:hover, .customer-next-review:hover {
+    box-shadow: 0 0 5px 3px var(--ddColor);
+}
+.ellipse {
+    display:inline-block;
+    width:180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.next, .prev {
+    position: absolute;
+    top: 0;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+}
+.next {
+    right: 0;
+}
+.prev {
+    left: 0;
+}
+.next, .prev {
+    margin-top: 150px;
+}
+.next:hover, .prev:hover {
+    color: var(--whiteColor);
+    background-color: var(--headerColor);
+}
