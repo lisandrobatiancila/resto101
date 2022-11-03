@@ -3,6 +3,8 @@
     --whiteColor: #fff;
     --headerColor: #eabd36;
     --darkColor: #000;
+    --successBorderColor: #01ce9b;
+    --successColorColor: #01ce9b;
 }
 * {
     padding: 0;

@@ -17,7 +17,7 @@
     ?>
     <section>
         <div class="container choices-container">
-            <div class="choices-content">
+            <div class="choices-content" id="choices-content">
                 <div class="sea-food-container animate_on_hover text-capitalize">
                     <h3>sea foods</h3>
                 </div>
@@ -32,8 +32,8 @@
                 </div>
             </div>
             <div class="menu-highleted-container" id="menu-highleted-container">
-                <div class="prev" id="prev">❮</div>
-                <div class="next" id="next">❯</div>
+                <!-- <div class="prev" id="prev">❮</div>
+                <div class="next" id="next">❯</div> -->
             </div>
         </div>
     </section>
