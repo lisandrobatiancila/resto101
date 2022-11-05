@@ -1,7 +1,10 @@
 <section class="header-container">
     <nav>
+        <div class="burger-menu" id="burger-menu">
+            <span class="menu"></span>
+        </div>
         <ul>
-            <li><a href="../index.php" class="text-capitalize">home</a></li>
+            <li><a href="/restaurant/index.php" class="text-capitalize">home</a></li>
             <li><a href="#" class="text-capitalize">about</a></li>
             <li><a href="/restaurant/menu-lists/menu-lists.php" class="text-capitalize">menu</a></li>
         </ul>
@@ -9,7 +12,7 @@
             <li><a href="#" class="text-capitalize">order</a></li>
         </ul>
     </nav>
-    <div class="content-w-500 mg-tp-300 mg-c animate-opacity">
+    <div class="btn-order-online">
         <button class="btn btn-rad-100 btn-outline-warn text-capitalize">order online</button>
     </div>
 </section>

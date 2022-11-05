@@ -1,48 +1,30 @@
 .order-online-content {
-    background-color: #f4cf61;
+    background-color: var(--headerColor);
     padding: 10px;
     position: relative;
-    animation: fadeIT linear 1s;
+    box-shadow: 0 0 5px 3px var(--ddColor);
 }
-.order-online-content::after::after {
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 100px;
-    background-color: red;
-    right: 0;
-    bottom: 0;
-    margin-bottom: -50px;
-    border-top-right-radius: 30%;
-    border-top-left-radius: 100%;
-}
-.order-online-content > form {
-    width: 700px;
-    margin: 0 auto;
-    padding: 10px;
-}
-.order-online-content > form > div * {
+form > div > * {
     display: block;
 }
-.order-online-content > form label {
-    margin: 5px;
-}
-.order-online-content > form input[type="text"] {
+form > div > input[type="text"] {
     width: 100%;
-    padding: 12px 15px;
     border: 1px solid var(--ddColor);
-    border-radius: 3px;
+    padding: 12px 12px;
+    border-radius: 100px;
 }
-.order-online-content > form .btn {
+form > div > label {
+    margin: 10px 0;
+}
+form > input[type="button"] {
     margin-top: 10px;
+    width: 100%;
+    border: 1px solid var(--successColorColor);
+    background-color: var(--whiteColor);
+    font-weight: 600;
+    letter-spacing: 1.5px;
 }
-
-@keyframes fadeIT {
-    0%{
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    100%{
-        opacity: 1;
-    }
+form > input[type="button"]:hover {
+    background-color: var(--successColorColor);
+    color: var(--whiteColor)
 }

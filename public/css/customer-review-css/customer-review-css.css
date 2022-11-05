@@ -1,4 +1,3 @@
-
 .customer-review-title {
     background-color: rgb(234, 189, 54, 1);
     padding: 10px;
@@ -131,4 +130,18 @@
 .next:hover, .prev:hover {
     color: var(--whiteColor);
     background-color: var(--headerColor);
+}
+
+@media screen and (max-width: 700px) {
+    .review-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .customer-prev-review, .customer-current-review, .customer-next-review {
+        width: 100%;
+        display: block;
+        float: none;
+    }
 }

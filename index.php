@@ -13,8 +13,14 @@
 <body>
     <?php
         include_once('./top-section/top-section.php');
+    ?>
+    <?php
         include_once('./top-menu/top-menu.php');
+    ?>
+    <?php
         include_once('./customer-review/customer-review.php');
+    ?>
+    <?php
         include_once('./static/footer.php');
     ?>
     <script src="./public/js/top-menu/top-menu.js"></script>

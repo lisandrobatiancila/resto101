@@ -38,6 +38,43 @@
 .header-container > nav ul li a:hover{
     background-color: var(--headerColor);
 }
+.burger-menu {
+    display: none;
+    padding: 20px;
+    float: left;
+    cursor: pointer;
+}
+.burger-menu > .menu {
+    position: relative;
+    display: block;
+    background-color: var(--whiteColor);
+    width: 24px;
+    height: 3px;
+}
+.burger-menu > .menu::after, .burger-menu .menu::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: var(--whiteColor);
+    display: block;
+    position: absolute;
+    transition: all 0.8s;
+}
+.burger-menu .menu::before {
+    top: 6px;
+}
+.burger-menu .menu::after {
+    top: 12px;
+}
+.burger-menu:hover {
+    background-color: var(--headerColor);
+}
+.header-container .btn-order-online {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 200px;
+}
 .btn {
     padding: 12px 20px;
     border: 1px solid var(--ddColor);
@@ -57,11 +94,61 @@
 .animate-opacity {
     animation: animate_content 2s linear 0s;
 }
+.burger-menu-toggled {
+    padding: 20px;
+    float: left;
+    cursor: pointer;
+    display: none;
+}
+.burger-menu-toggled > .menu {
+    display: block;
+    width: 24px;
+    height: 3px;
+    position: relative;
+    background-color: transparent;
+}
+.burger-menu-toggled > .menu::after {
+    content: "";
+    width: 24px;
+    height: 3px;
+    background-color: var(--whiteColor);
+    position: absolute;
+    transform: rotate(45deg);
+    transition: all 0.8s;
+}
+.burger-menu-toggled > .menu::before {
+    content: "";
+    width: 24px;
+    height: 3px;
+    background-color: var(--whiteColor);
+    position: absolute;
+    transform: rotate(-45deg);
+    transition: all 0.8s;
+}
 @keyframes animate_content {
     0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header-container > .btn-order-online {
+        width: auto;
+        margin-top: 50px;
+    }
+    .header-container nav {
+        flex-direction: column;
+    }
+    .header-container > nav ul li {
+        float: none;
+    }
+    .header-container > nav ul{
+        display: none;
+    }
+    .burger-menu, .burger-menu-toggled {
+        display: block;
     }
 }

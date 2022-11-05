@@ -24,9 +24,8 @@ function drawCertainMenu() {
     let left_side_img = document.createElement("img");
     let left_side_title = document.createElement("p");
 
-    left_side_img.src = `http://localhost/restaurant${CERTAIN_MENU[0].img}`;
+    left_side_img.src = `${CERTAIN_MENU[0].img}`;
     left_side_title.textContent = CERTAIN_MENU[0].title;
-
     left_side_img.style.width = "200px";
     left_side_img.style.height = "200px";
     left_side_title.className = "content-title";
@@ -92,9 +91,12 @@ function drawCertainMenu() {
 
     DIRECTIONS_Container.appendChild(DIRECTIONS_TAG);
     for(let i = 0; i < directionLen; i++) {
-        const DIRECTIONSContent = document.createElement("p");
-        DIRECTIONSContent.textContent = directions[i].title;
+        const DIRECTIONSContent = document.createElement("div");
+        const DIRECTIONSContentLITAG = document.createElement("li");
+        DIRECTIONSContent.className = "directions-content-item"
+        DIRECTIONSContentLITAG.textContent = directions[i].title;
 
+        DIRECTIONSContent.appendChild(DIRECTIONSContentLITAG);
         DIRECTIONS_Container.appendChild(DIRECTIONSContent);
     }
     CERT_MENU_RIGHT_SIDE_CONTAINER.appendChild(DIRECTIONS_Container);

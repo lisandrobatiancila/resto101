@@ -1,3 +1,5 @@
+let isINMOBILE = window.matchMedia("(max-width: 700px)").matches;
+
 let customerReview = [
     {
         id: 1001, name: 'dela cruz, juan d.', gender: 'male', 
@@ -53,6 +55,10 @@ let customerReview = [
     },
 ];
 
+if(isINMOBILE) {
+    document.getElementById("prev-review-container").style.display = "none";
+}
+
 const CUST_REV_CONT = document.getElementById("review-container");
 const CUST_PREV_REV = document.getElementsByClassName("customer-prev-review");
 
@@ -78,7 +84,8 @@ NEXT.addEventListener("click", function() {
     PREV_INDEX_LISTS.push(CURR_INDEX-1);
     if(NEXT_INDEX <= customerReview.length){
         NEXT_REV_CONT.appendChild(drawNextReview(CURR_INDEX, NEXT_INDEX));
-        PREV_REV_CONT.appendChild(drawPrevReview(PREV_INDEX_LISTS[PREV_INDEX_LISTS.length-1]));
+        if(isINMOBILE)
+            PREV_REV_CONT.appendChild(drawPrevReview(PREV_INDEX_LISTS[PREV_INDEX_LISTS.length-1]));
     }
 });
 PREV.addEventListener("click", function() {
@@ -357,43 +364,45 @@ function drawNextReview(currIndex, nextIndex) {
     //DONE SETTING THE CUSTOMER_CURRENT_REVIEW
     if(nextIndex >= customerReview.length)
         return CUST_CURR_REV;
-    const CUST_NEXT_REV = document.createElement("div");
-    CUST_NEXT_REV.className = 'customer-next-review animate-opacity';
+    if(!isINMOBILE) {
+        const CUST_NEXT_REV = document.createElement("div");
+        CUST_NEXT_REV.className = 'customer-next-review animate-opacity';
 
-    CUST_CURR_REV_HEAD = document.createElement("div");
-    USER_IMG = document.createElement("img");
-    USER_NAME_SPAN = document.createElement("p");
+        CUST_CURR_REV_HEAD = document.createElement("div");
+        USER_IMG = document.createElement("img");
+        USER_NAME_SPAN = document.createElement("p");
 
-    CUST_CURR_REV_BODY = document.createElement("div");
-    CUST_REVIEW_TAG = document.createElement("p");
+        CUST_CURR_REV_BODY = document.createElement("div");
+        CUST_REVIEW_TAG = document.createElement("p");
 
-    CUST_CURR_REV_HEAD.style.padding = "10px";
-    CUST_CURR_REV_HEAD.style.textAlign = "center";
-    USER_IMG.src = customerReview[nextIndex].gender === "male"?
-        "http://localhost/restaurant/public/images/man.png":
-        "http://localhost/restaurant/public/images/girl.png";
-    USER_IMG.style.width = "70px";
-    USER_IMG.style.height = "70px";
+        CUST_CURR_REV_HEAD.style.padding = "10px";
+        CUST_CURR_REV_HEAD.style.textAlign = "center";
+        USER_IMG.src = customerReview[nextIndex].gender === "male"?
+            "http://localhost/restaurant/public/images/man.png":
+            "http://localhost/restaurant/public/images/girl.png";
+        USER_IMG.style.width = "70px";
+        USER_IMG.style.height = "70px";
 
-    USER_NAME_SPAN.textContent = customerReview[nextIndex].name;
-    USER_NAME_SPAN.className = "text-capitalize";
+        USER_NAME_SPAN.textContent = customerReview[nextIndex].name;
+        USER_NAME_SPAN.className = "text-capitalize";
 
-    CUST_CURR_REV_BODY.style.textAlign = "center";
-    CUST_REVIEW_TAG.className = "ellipse";
-    CUST_REVIEW_TAG.textContent = customerReview[nextIndex].review;
-    CUST_CURR_REV_BODY.appendChild(CUST_REVIEW_TAG);
+        CUST_CURR_REV_BODY.style.textAlign = "center";
+        CUST_REVIEW_TAG.className = "ellipse";
+        CUST_REVIEW_TAG.textContent = customerReview[nextIndex].review;
+        CUST_CURR_REV_BODY.appendChild(CUST_REVIEW_TAG);
 
-    CUST_CURR_REV_HEAD.appendChild(USER_IMG);
-    CUST_CURR_REV_HEAD.appendChild(USER_NAME_SPAN);
+        CUST_CURR_REV_HEAD.appendChild(USER_IMG);
+        CUST_CURR_REV_HEAD.appendChild(USER_NAME_SPAN);
 
-    // CUST_CURR_REV_BODY.appendChild()
+        // CUST_CURR_REV_BODY.appendChild()
 
-    CUST_NEXT_REV.appendChild(CUST_CURR_REV_HEAD);
-    CUST_NEXT_REV.appendChild(CUST_CURR_REV_BODY);
+        CUST_NEXT_REV.appendChild(CUST_CURR_REV_HEAD);
+        CUST_NEXT_REV.appendChild(CUST_CURR_REV_BODY);
+        FINALCONTAINER.appendChild(CUST_NEXT_REV);
+    }
     
-    FINALCONTAINER.appendChild(CUST_CURR_REV);
-    FINALCONTAINER.appendChild(CUST_NEXT_REV);
-    // NEXT_REV_CONT.appendChild(CUST_NEXT_REV);
+        FINALCONTAINER.appendChild(CUST_CURR_REV);
+        // NEXT_REV_CONT.appendChild(CUST_NEXT_REV);
     return FINALCONTAINER
 }
 function drawPrevReview(currIndex) {
@@ -434,16 +443,4 @@ function drawPrevReview(currIndex) {
 
     return CUST_PREV_REV;
 }
-// CUST_CURR_REV.textContent = customerReview[currIndex].name;
-//     CUST_CURR_REV.style.width = 28+"%";
-//     CUST_CURR_REV.style.height = "150px";
-//     CUST_CURR_REV.style.marginTop = "120px";
-//     CUST_CURR_REV.className = "customer-prev-review animate-opacity";
-//     CUST_CURR_REV.style.display = "block";
 
-//     CUST_NEXT_REV.style.width = "50%";
-//     CUST_NEXT_REV.style.height = "300px";
-//     CUST_NEXT_REV.style.marginTop = "0";
-//     CUST_NEXT_REV.className = "customer-prev-review animate-opacity";
-//     CUST_NEXT_REV.style.display = "block";
-// DO THIS

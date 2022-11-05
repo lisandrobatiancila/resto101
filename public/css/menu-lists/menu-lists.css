@@ -3,6 +3,7 @@
     flex-direction: row;
     justify-content: center;
     position: relative;
+    gap: 10px;
 }
 .choices-content > div {
     border: 1px solid var(--ddColor);
@@ -29,9 +30,6 @@
     top: 0;
     right: 0;
     animation: animate_on_hover linear 1s infinite;
-}
-.choices-content > div:not(:last-child) {
-    margin-right: 20px;
 }
 .choices-content > div:active {
     transform: translateY(2px);
@@ -124,7 +122,7 @@
     flex-direction: column;
     align-items: center;
 }
-.menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-item > .menu-content-body > button {
+.menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-item > .menu-content-body > button.order {
     width: 50%;
     border: 1px solid var(--successBorderColor);
     border-radius: 3px;
@@ -133,9 +131,31 @@
     margin-top: 10px;
     background-color: var(--whiteColor);
     text-transform: capitalize;
+    position: relative;
+    overflow: hidden;
 }
-.menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-item > .menu-content-body > button:hover {
+.menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-item > .menu-content-body > button.order::before {
+    content: "";
+    position: absolute;
+    background-color: var(--ddColor);
+    padding-top: 300%;
+    padding-left: 300%;
+    margin-left: -200px !important;
+    margin-top: -100px;
+    opacity: 0;
+    transition: all 0.8s;
+}
+.menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-item > .menu-content-body > button.order:active::before {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+}
+.menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-item > .menu-content-body > button.order:hover {
     background-color: var(--successColorColor);
+}
+.menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-item > .menu-content-body > button.order:active {
+    transform: translateY(-3px);
 }
 .menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-next-item {
     border: 1px solid var(--ddColor);
@@ -159,7 +179,7 @@
     align-items: center;
     align-content: center;
 }
-.menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-next-item > .menu-content-body > button {
+.menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-next-item > .menu-content-body > button.order {
     width: 50%;
     border: 1px solid var(--successBorderColor);
     border-radius: 3px;
@@ -168,8 +188,31 @@
     margin-top: 10px;
     background-color: var(--whiteColor);
     text-transform: capitalize;
+    position: relative;
+    overflow: hidden;
 }
-.menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-next-item > .menu-content-body > button:hover {
+.menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-next-item > .menu-content-body > button.order::after {
+    content: "";
+    background-color: var(--ddColor);
+    padding-top: 300%;
+    padding-left: 300%;
+    margin-top: -100px;
+    margin-left: -200px !important;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.8s;
+}
+.menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-next-item > .menu-content-body > button.order:active::after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+
+}
+.menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-next-item > .menu-content-body > button.order:active {
+    transform: translateY(-3px);
+}
+.menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-next-item > .menu-content-body > button.order:hover {
     background-color: var(--successColorColor);
 }
 .food-price {
@@ -277,5 +320,23 @@
         opacity: 1;
         margin: 0;
         padding: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .choices-content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .choices-content > div {
+        width: 100%;
+    }
+    .menu-content-container > .menu-content-item-container > .menu-content-item-container-final .menu-content-item {
+        width: 100%;
+    }
+    .food-price {
+        top: 0;
+        margin-top: -10px;
     }
 }

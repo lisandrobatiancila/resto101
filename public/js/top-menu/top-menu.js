@@ -1,6 +1,6 @@
 const topMenuData = [
     {
-        id: 1001, title: "adobo", img: "/public/images/adobo.jpg", price: 200,
+        id: 1001, title: "adobo", img: "http://localhost/restaurant/public/images/adobo.jpg", price: 200,
         ingredients: [
             "2 lbs pork belly",
             "2 tablespoon garlic minced or crushed",
@@ -33,7 +33,7 @@ const topMenuData = [
         }
     },
     {
-        id: 2001, title: "sisig", img: "/public/images/sisig.jpg", price: 300,
+        id: 2001, title: "sisig", img: "http://localhost/restaurant/public/images/sisig.jpg", price: 300,
         ingredients: [
             "1 lb. pig ears",
             "1 1/2 lb pork belly",
@@ -70,7 +70,7 @@ const topMenuData = [
         }
     },
     {
-        id: 3001, title: "sinigang", img: "/public/images/sinigang.png", price: 180,
+        id: 3001, title: "sinigang", img: "http://localhost/restaurant/public/images/sinigang.png", price: 180,
         ingredients: [
             "2 lbs pork belly or buto-buto",
             "1 bunch spinach or kang-kong",
@@ -115,19 +115,24 @@ for(let i = 0; i < topMenuLen; i++) {
     top_menu_body.className = "top-menu-body text-capitalize";
     top_menu_price.className = "top-menu-price";
 
-    top_menu_header_img.src = `http://localhost/restaurant/${topMenuData[i].img}`;
+    top_menu_header_img.src = `${topMenuData[i].img}`;
     top_menu_header_img.style.width = 'inherit'
     top_menu_header_img.style.height = 'inherit'
     top_menu_priceTag.textContent = topMenuData[i].price;
 
     const top_body_pTagTile = document.createElement("p");
     const top_body_button = document.createElement("button");
+    const top_body_addToOrder = document.createElement("button");
+
     top_body_button.setAttribute("id", `btn-${topMenuData[i].id}`);
-    top_body_button.className = "btn btn-outline-primary text-capitalize"
+    top_body_button.className = "btn btn-outline-primary text-capitalize";
+    top_body_addToOrder.className = "btn btn-outline-order text-capitalize";
     top_body_button.textContent = "view";
+    top_body_addToOrder.textContent = "add to order";
     top_body_pTagTile.textContent = topMenuData[i].title;
 
     top_menu_body.appendChild(top_body_pTagTile);
+    top_menu_body.appendChild(top_body_addToOrder);
     top_menu_body.appendChild(top_body_button);
 
     top_menu_price.appendChild(top_menu_priceTag);

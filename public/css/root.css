@@ -28,16 +28,6 @@ button {
 .text-capitalize {
     text-transform: capitalize;
 }
-.content-w-500 {
-    width: 500px;
-}
-.mg-c {
-    margin: 0 auto;
-    text-align: center;
-}
-.mg-tp-300 {
-    margin-top: 300px;
-}
 .footer {
     margin-top: 50px;
     background-color: var(--darkColor);
@@ -63,4 +53,13 @@ button {
 }
 .footer-content ul li a:hover {
     color: var(--ddColor);
+}
+
+@media screen and (max-width: 700px) {
+    .footer {
+        width: 100%;
+    }
+    .footer-content {
+        flex-direction: column;
+    }
 }

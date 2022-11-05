@@ -93,16 +93,32 @@
     background-color: #dcac3e;
     color: var(--whiteColor);
     border: 1px solid var(--whiteColor);
-    padding: 5px;
     text-align: center;
     width: 200px;
     margin: 0 auto;
     font-size: 18px;
     letter-spacing: 1.5px;
 }
+.certain-menu-right-content-body > .directions-info-container > .directions-content-item:nth-child(even) {
+    background-color: #fdfdfd;
+}
+.certain-menu-right-content-body > .directions-info-container > .directions-content-item:nth-child(odd) {
+    background-color: #ececec;
+}
 .certain-menu-right-content-body > .directions-info-container > * {
     padding: 5px 20px;
     line-height: 25px;
     letter-spacing: 1.5px;
     text-align: justify;
+}
+
+@media screen and (max-width: 600px) {
+    .certain-menu-content {
+        flex-direction: column;
+    }
+    .certain-menu-right-content-body > .other-info-container > .info-content-title, 
+    .certain-menu-right-content-body > .ingredients-info-container > .ingredients-content-title,
+    .certain-menu-right-content-body > .directions-info-container > .directions-content-title {
+        width: inherit;
+    }
 }
