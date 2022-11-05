@@ -1,3 +1,3 @@
 # resto101
 
-a restaurant mock-up designs
+Restaurant websites design.
