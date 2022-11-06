@@ -75,6 +75,25 @@
 .btn-outline-order {
     border: 1px solid var(--successBorderColor);
     background-color: var(--whiteColor);
+    position: relative;
+    overflow: hidden;
+}
+.btn-outline-order::after {
+    content: "";
+    background-color: var(--ddColor);
+    padding-top: 300%;
+    padding-left: 300%;
+    margin-top: -100px;
+    margin-left: -200px !important;
+    position: absolute;
+    opacity: 0;
+    transition: all 0.8s;
+}
+.btn-outline-order:active::after {
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    transition: 0s;
 }
 .btn-outline-order:hover {
     background-color: var(--successBorderColor);

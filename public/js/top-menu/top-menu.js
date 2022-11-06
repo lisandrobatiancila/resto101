@@ -1,6 +1,6 @@
 const topMenuData = [
     {
-        id: 1001, title: "adobo", img: "http://localhost/restaurant/public/images/adobo.jpg", price: 200,
+        id: 2000021, title: "adobo", img: "http://localhost/restaurant/public/images/adobo.jpg", price: 200,
         ingredients: [
             "2 lbs pork belly",
             "2 tablespoon garlic minced or crushed",
@@ -33,7 +33,7 @@ const topMenuData = [
         }
     },
     {
-        id: 2001, title: "sisig", img: "http://localhost/restaurant/public/images/sisig.jpg", price: 300,
+        id: 2000026, title: "sisig", img: "http://localhost/restaurant/public/images/sisig.jpg", price: 300,
         ingredients: [
             "1 lb. pig ears",
             "1 1/2 lb pork belly",
@@ -70,7 +70,7 @@ const topMenuData = [
         }
     },
     {
-        id: 3001, title: "sinigang", img: "http://localhost/restaurant/public/images/sinigang.png", price: 180,
+        id: 2000023, title: "sinigang", img: "http://localhost/restaurant/public/images/sinigang.png", price: 180,
         ingredients: [
             "2 lbs pork belly or buto-buto",
             "1 bunch spinach or kang-kong",
@@ -98,6 +98,7 @@ const topMenuData = [
 ];
 
 let TOP_MENU_CONTAINER = document.getElementById("top-menu-container");
+
 // let TOP_MENU_CONTENT = document.getElementById("top-menu-content");
 
 const topMenuLen = topMenuData.length;
@@ -124,7 +125,8 @@ for(let i = 0; i < topMenuLen; i++) {
     const top_body_button = document.createElement("button");
     const top_body_addToOrder = document.createElement("button");
 
-    top_body_button.setAttribute("id", `btn-${topMenuData[i].id}`);
+    top_body_addToOrder.setAttribute("id", `btn-order-${topMenuData[i].id}`);
+    top_body_button.setAttribute("id", `btn-view-${topMenuData[i].id}`);
     top_body_button.className = "btn btn-outline-primary text-capitalize";
     top_body_addToOrder.className = "btn btn-outline-order text-capitalize";
     top_body_button.textContent = "view";
@@ -154,13 +156,67 @@ for(let i = 0; i < bvLen; i++) {
 
         if(!TOP_MENU)
             return;
-        const menuID = TOP_MENU.split('-')[1]; // get the top_menu ID
+        const split_top_menu = TOP_MENU.split("-");
+        const menuBTNName = split_top_menu[1];
+        const menuID = parseInt(split_top_menu[2]); // get the top_menu ID
         const menu = topMenuData.filter(menu => menu.id === parseInt(menuID));
+        let orders = [];
 
-        const si = setInterval(() => {
-            localStorage.setItem("view-top-menu", JSON.stringify(menu));
-            window.location.href = 'certain-menu/certain-menu.php';
-            clearInterval(si);
-        }, 1000);
+        if(menuBTNName === "order") {
+            const RESPONSE_MESSAGES = document.getElementById("response-messages");
+            if(localStorage.getItem("orders")) {
+                orders = JSON.parse(localStorage.getItem("orders"));
+                if(!RESTO_STORAGE.dishExistAlready(orders, menuID)){
+                    localStorage.setItem("orders", JSON.stringify(RESTO_STORAGE.addNewDish(
+                        orders,
+                        topMenuData.filter(menu => menu.id == menuID)[0]
+                    )));
+                    RESPONSE_MESSAGES.textContent = "New order was added!";
+                    RESPONSE_MESSAGES.style.opacity = 1;
+                    RESPONSE_MESSAGES.style.backgroundColor = "#76eba5";
+                    RESPONSE_MESSAGES.style.transition = "all 0.8s";
+
+                    const si = setInterval(() => {
+                        RESPONSE_MESSAGES.style.opacity = 0;
+                        clearInterval(si);
+                    }, 1500);
+                }
+                else {
+                    RESPONSE_MESSAGES.textContent = "This order has been added already!";
+                    RESPONSE_MESSAGES.style.opacity = 1;
+                    RESPONSE_MESSAGES.style.backgroundColor = "#ffb34f";
+                    RESPONSE_MESSAGES.style.transition = "all 0.8s";
+
+                    const si = setInterval(() => {
+                        RESPONSE_MESSAGES.style.opacity = 0;
+                        clearInterval(si);
+                    }, 1500);
+                }
+                    
+            }
+            else {
+                orders.push(topMenuData.filter(menu => menu.id == menuID)[0]);
+                localStorage.setItem("orders", JSON.stringify(orders));
+                RESPONSE_MESSAGES.textContent = "New order was added!";
+                RESPONSE_MESSAGES.style.opacity = 1;
+                RESPONSE_MESSAGES.style.backgroundColor = "#76eba5";
+                RESPONSE_MESSAGES.style.transition = "all 0.8s";
+
+                const si = setInterval(() => {
+                    RESPONSE_MESSAGES.style.opacity = 0;
+                    clearInterval(si);
+                }, 1500);
+            }
+            orders = JSON.parse(localStorage.getItem("orders")).length
+            ORDER_LIST.textContent = orders > 9?orders:`0${orders}`;
+        }
+        else if(menuBTNName === "view") {
+            const si = setInterval(() => {
+                localStorage.setItem("view-top-menu", JSON.stringify(menu));
+                window.location.href = 'certain-menu/certain-menu.php';
+                clearInterval(si);
+            }, 1000);
+        }
+        
     });
 }

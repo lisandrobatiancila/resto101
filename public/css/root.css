@@ -54,12 +54,29 @@ button {
 .footer-content ul li a:hover {
     color: var(--ddColor);
 }
-
+.response-messages {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: var(--whiteColor);
+    width: 50%;
+    padding: 10px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    text-align: center;
+    opacity: 0;
+}
 @media screen and (max-width: 700px) {
     .footer {
         width: 100%;
     }
     .footer-content {
         flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .response-messages {
+        width: 100%;
     }
 }

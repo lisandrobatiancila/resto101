@@ -1,4 +1,9 @@
+const RESTO_STORAGE = new RestoStorage();
+
 let isMOBILE = window.matchMedia("(max-width: 600px)").matches;
+const ORDER_LIST = document.getElementById("order-list"); //local to this instanct page
+
+ORDER_LIST.textContent = RESTO_STORAGE.countedOrders();
 
 window.addEventListener("scroll", function(ev) {
     let nav = this.document.getElementsByTagName("nav");

@@ -1,4 +1,5 @@
 <div class="footer">
+    <div class="response-messages" id="response-messages"></div>
     <div class="footer-content">
         <div class="special-thanks">
             <h3 class="text-capitalize">special thanks</h3>

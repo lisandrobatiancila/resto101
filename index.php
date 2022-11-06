@@ -23,6 +23,7 @@
     <?php
         include_once('./static/footer.php');
     ?>
+    <script src="./public/js/resto-storage/RestoStorage.js"></script>
     <script src="./public/js/top-menu/top-menu.js"></script>
     <script src="./public/js/top-section/top-section.js"></script>
     <script src="./public/js/customer-review/customer-review.js"></script>

@@ -1,5 +1,3 @@
-const RESTO_STORAGE = new RestoStorage();
-
 const MENU_MAIN_CONTAINER = document.getElementById("menu-highleted-container");
 const CHOICES_CONTENT = document.getElementById("choices-content");
 
@@ -25,7 +23,7 @@ const menusLists = [
                 {
                     id: 10001, title: 'fish',
                     dishes: [
-                        {id: 100001, title: "sweet and sour tilapia, sweet and sour tilapia, sweet and sour tilapia", 
+                        {id: 100001, title: "sweet and sour tilapia", 
                             ingredients: [
                                 "2 pieces tilapia cleaned",
                                 "2 tablespoons Knorr Liquid Seasoning",
@@ -1284,7 +1282,7 @@ const menusLists = [
                     id: 20002, title: "pork",
                     dishes: [
                         {
-                            id: 2000021, title: "pork adobo", price: 120,
+                            id: 2000021, title: "pork adobo", price: 200,
                             img: "http://localhost/restaurant/public/images/adobo.jpg",
                             ingredients: [
                                 "2 lbs pork belly",
@@ -1314,7 +1312,7 @@ const menusLists = [
                             }
                         },
                         {
-                            id: 2000023, title: "pork sinigang", price: 100,
+                            id: 2000023, title: "pork sinigang", price: 180,
                             img: "http://localhost/restaurant/public/images/sinigang.png",
                             ingredients: [
                                 "2 lbs. Pork belly cubed",
@@ -1445,7 +1443,7 @@ const menusLists = [
                             }
                         },
                         {
-                            id: 2000026, title: "pork sisig", price: 160,
+                            id: 2000026, title: "pork sisig", price: 300,
                             img: "http://localhost/restaurant/public/images/sisig.jpg",
                             ingredients: [
                                 "1 lb. pig ears",
@@ -2762,20 +2760,49 @@ function viewDISH(dish) {
 
 function addDishToOrder(dish) {
     let orders = [];
+    const RESPONSE_MESSAGES = document.getElementById("response-messages");
+
     if(localStorage.getItem("orders")) {
         orders = JSON.parse(localStorage.getItem("orders"));
-        console.log(orders)
-        console.log(dish)
         
         if(!RESTO_STORAGE.dishExistAlready(orders, dish.id)) {
-            localStorage.setItem("orders", JSON.stringify(RESTO_STORAGE.addNewDish(orders, dish)))
+            localStorage.setItem("orders", JSON.stringify(RESTO_STORAGE.addNewDish(orders, dish)));
+
+            RESPONSE_MESSAGES.textContent = "New order was added!";
+            RESPONSE_MESSAGES.style.opacity = 1;
+            RESPONSE_MESSAGES.style.backgroundColor = "#76eba5";
+            RESPONSE_MESSAGES.style.transition = "all 0s";
+
+            const si = setInterval(() => {
+                RESPONSE_MESSAGES.style.opacity = 0;
+                clearInterval(si);
+            }, 1500);
         }
         else {
-            alert("added already");
+            localStorage.setItem("orders", JSON.stringify(orders));
+            RESPONSE_MESSAGES.textContent = "This order has been added already!";
+            RESPONSE_MESSAGES.style.opacity = 1;
+            RESPONSE_MESSAGES.style.backgroundColor = "#ffb34f";
+            RESPONSE_MESSAGES.style.transition = "all 0.8s";
+
+            const si = setInterval(() => {
+                RESPONSE_MESSAGES.style.opacity = 0;
+                clearInterval(si);
+            }, 1500);
         }
     }
     else {
         orders.push(dish);
         localStorage.setItem("orders", JSON.stringify(orders));
+        RESPONSE_MESSAGES.textContent = "New order was added!";
+        RESPONSE_MESSAGES.style.opacity = 1;
+        RESPONSE_MESSAGES.style.backgroundColor = "#76eba5";
+        RESPONSE_MESSAGES.style.transition = "all 0s";
+
+        const si = setInterval(() => {
+            RESPONSE_MESSAGES.style.opacity = 0;
+            clearInterval(si);
+        }, 1500);
     }
+    ORDER_LIST.textContent = RESTO_STORAGE.countedOrders();
 }

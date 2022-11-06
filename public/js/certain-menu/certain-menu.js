@@ -23,15 +23,25 @@ function drawCertainMenu() {
     const CERT_MENU_LEFT_SIDE_CONTAINER = document.createElement("div"); // this is image side
     let left_side_img = document.createElement("img");
     let left_side_title = document.createElement("p");
+    let left_side_addToOrder = document.createElement("button");
 
     left_side_img.src = `${CERTAIN_MENU[0].img}`;
     left_side_title.textContent = CERTAIN_MENU[0].title;
+    left_side_addToOrder.textContent = "add to order";
     left_side_img.style.width = "200px";
     left_side_img.style.height = "200px";
     left_side_title.className = "content-title";
+    left_side_addToOrder.style.marginTop = "5px";
+    left_side_addToOrder.className = "btn btn-outline-order text-capitalize";
+    left_side_addToOrder.style.width = "100%";
 
     CERT_MENU_LEFT_SIDE_CONTAINER.appendChild(left_side_img);
     CERT_MENU_LEFT_SIDE_CONTAINER.appendChild(left_side_title);
+    CERT_MENU_LEFT_SIDE_CONTAINER.appendChild(left_side_addToOrder);
+
+    left_side_addToOrder.addEventListener("click", function () {
+        addDishToOrder(CERTAIN_MENU[0]);
+    });
 
     const CERT_MENU_RIGHT_SIDE_CONTAINER = document.createElement("div"); // this is description of info side
     CERT_MENU_RIGHT_SIDE_CONTAINER.className = "certain-menu-right-content-body";
@@ -106,4 +116,57 @@ function drawCertainMenu() {
     CERTAIN_MENU_CONTENT.appendChild(CERT_MENU_RIGHT_SIDE_CONTAINER);
 
     return CERTAIN_MENU_CONTENT;
+}
+
+function addDishToOrder(dish) {
+    const RESPONSE_MESSAGES = document.getElementById("response-messages");
+    const ORDER_LIST = document.getElementById("order-list");
+    let orders = [];
+
+    if(localStorage.getItem("orders")) {
+        orders = JSON.parse(localStorage.getItem("orders"));
+
+        if(!RESTO_STORAGE.dishExistAlready(orders, dish.id)) {
+            localStorage.setItem("orders", JSON.stringify(RESTO_STORAGE.addNewDish(
+                orders,
+                dish
+            )));
+
+            RESPONSE_MESSAGES.textContent = "New order was added!";
+            RESPONSE_MESSAGES.style.opacity = 1;
+            RESPONSE_MESSAGES.style.backgroundColor = "#76eba5";
+            RESPONSE_MESSAGES.style.transition = "all 0.8s";
+
+            const si = setInterval(() => {
+                RESPONSE_MESSAGES.style.opacity = 0;
+                clearInterval(si);
+            }, 1500);
+        }
+        else {
+            RESPONSE_MESSAGES.textContent = "This order has been added already!";
+            RESPONSE_MESSAGES.style.opacity = 1;
+            RESPONSE_MESSAGES.style.backgroundColor = "#ffb34f";
+            RESPONSE_MESSAGES.style.transition = "all 0.8s"
+
+            const si = setInterval(() => {
+                RESPONSE_MESSAGES.style.opacity = 0;
+                clearInterval(si);
+            }, 1500);
+        }
+    }
+    else {
+        orders.push(dish);
+        localStorage.setItem("orders", JSON.stringify(orders));
+
+        RESPONSE_MESSAGES.textContent = "New order was added!";
+        RESPONSE_MESSAGES.style.opacity = 1;
+        RESPONSE_MESSAGES.style.backgroundColor = "#76eba5";
+        RESPONSE_MESSAGES.style.transition = "all 0.8s";
+
+        const si = setInterval(() => {
+            RESPONSE_MESSAGES.style.opacity = 0;
+            clearInterval(si);
+        }, 1500);
+    }
+    ORDER_LIST.textContent = RESTO_STORAGE.countedOrders();
 }

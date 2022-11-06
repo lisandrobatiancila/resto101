@@ -8,4 +8,12 @@ class RestoStorage {
         orders.push(dish);
         return orders;
     }
+    countedOrders () {
+        if(localStorage.getItem("orders")) {
+            const orders = JSON.parse(localStorage.getItem("orders")).length;
+
+            return orders > 9?orders:`0${orders}`;
+        }
+        return `00`;
+    }
 }
