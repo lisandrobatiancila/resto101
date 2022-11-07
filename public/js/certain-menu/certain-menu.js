@@ -133,6 +133,7 @@ function addDishToOrder(dish) {
             )));
 
             RESPONSE_MESSAGES.textContent = "New order was added!";
+            RESPONSE_MESSAGES.style.zIndex = "1";
             RESPONSE_MESSAGES.style.opacity = 1;
             RESPONSE_MESSAGES.style.backgroundColor = "#76eba5";
             RESPONSE_MESSAGES.style.transition = "all 0.8s";
@@ -144,6 +145,7 @@ function addDishToOrder(dish) {
         }
         else {
             RESPONSE_MESSAGES.textContent = "This order has been added already!";
+            RESPONSE_MESSAGES.style.zIndex = "1";
             RESPONSE_MESSAGES.style.opacity = 1;
             RESPONSE_MESSAGES.style.backgroundColor = "#ffb34f";
             RESPONSE_MESSAGES.style.transition = "all 0.8s"
@@ -159,6 +161,7 @@ function addDishToOrder(dish) {
         localStorage.setItem("orders", JSON.stringify(orders));
 
         RESPONSE_MESSAGES.textContent = "New order was added!";
+        RESPONSE_MESSAGES.style.zIndex = "1";
         RESPONSE_MESSAGES.style.opacity = 1;
         RESPONSE_MESSAGES.style.backgroundColor = "#76eba5";
         RESPONSE_MESSAGES.style.transition = "all 0.8s";
