@@ -50,6 +50,7 @@ button {
 }
 .footer-content ul li a {
     color: var(--whiteColor);
+    display: block;
 }
 .footer-content ul li a:hover {
     color: var(--ddColor);

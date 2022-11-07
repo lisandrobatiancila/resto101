@@ -1,3 +1,7 @@
+section.container {
+    animation: animate_order_form 1s linear 0s;
+    transition: all 1s;
+}
 .order-online-content {
     background-color: var(--headerColor);
     padding: 10px;
@@ -27,4 +31,14 @@ form > input[type="button"] {
 form > input[type="button"]:hover {
     background-color: var(--successColorColor);
     color: var(--whiteColor)
+}
+
+@keyframes animate_order_form {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+    }
 }

@@ -24,9 +24,6 @@
                 <div class="meat-food-container text-capitalize">
                     <h3>meat</h3>
                 </div>
-                <div class="drinks-container text-capitalize">
-                    <h3>drinks</h3>
-                </div>
                 <div class="dessert-food-container text-capitalize">
                     <h3>desserts</h3>
                 </div>

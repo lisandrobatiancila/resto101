@@ -172,6 +172,7 @@ for(let i = 0; i < bvLen; i++) {
                         topMenuData.filter(menu => menu.id == menuID)[0]
                     )));
                     RESPONSE_MESSAGES.textContent = "New order was added!";
+                    RESPONSE_MESSAGES.style.zIndex = "1";
                     RESPONSE_MESSAGES.style.opacity = 1;
                     RESPONSE_MESSAGES.style.backgroundColor = "#76eba5";
                     RESPONSE_MESSAGES.style.transition = "all 0.8s";
@@ -183,6 +184,7 @@ for(let i = 0; i < bvLen; i++) {
                 }
                 else {
                     RESPONSE_MESSAGES.textContent = "This order has been added already!";
+                    RESPONSE_MESSAGES.style.zIndex = "1";
                     RESPONSE_MESSAGES.style.opacity = 1;
                     RESPONSE_MESSAGES.style.backgroundColor = "#ffb34f";
                     RESPONSE_MESSAGES.style.transition = "all 0.8s";
@@ -198,6 +200,7 @@ for(let i = 0; i < bvLen; i++) {
                 orders.push(topMenuData.filter(menu => menu.id == menuID)[0]);
                 localStorage.setItem("orders", JSON.stringify(orders));
                 RESPONSE_MESSAGES.textContent = "New order was added!";
+                RESPONSE_MESSAGES.style.zIndex = "1";
                 RESPONSE_MESSAGES.style.opacity = 1;
                 RESPONSE_MESSAGES.style.backgroundColor = "#76eba5";
                 RESPONSE_MESSAGES.style.transition = "all 0.8s";

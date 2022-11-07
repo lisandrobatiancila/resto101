@@ -174,3 +174,16 @@
         height: 0;
     }
 }
+
+@media screen and (max-height: 650px) {
+    .header-container {
+        position: relative;
+    }
+    .header-container::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        margin-bottom: -50px;
+        /* display: none; */
+    }
+}

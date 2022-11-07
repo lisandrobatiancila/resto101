@@ -2449,8 +2449,8 @@ function changeMENU () {
 function nextMenuDishListener() {
     const nextID = this.getAttribute("id");
     if(nextID === "next-fish") {
-        if(parseInt(localStorage.getItem("currentFishIndex"))+1 >= menusLists[0].type.item[0].dishes.length)
-            localStorage.setItem("currentFishIndex", -1);
+        if(parseInt(localStorage.getItem("currentFishIndex")) >= menusLists[0].type.item[0].dishes.length)
+            localStorage.setItem("currentFishIndex", 0);
         const currentFishIndex = parseInt(localStorage.getItem("currentFishIndex"));
         localStorage.setItem("currentFishIndex", currentFishIndex+1);
         const fishDISH = MENU_MAIN_CONTAINER.children[0].children[0]; // display all child
@@ -2459,10 +2459,10 @@ function nextMenuDishListener() {
         // fishCONTENT.children[0].className = "inactive";
         // fishCONTENT.children[1].className = "menu-content-item";
         if(isMOBILE){
-            if(parseInt(localStorage.getItem("currentFishIndex"))+1 >= menusLists[0].type.item[0].dishes.length)
+            if(parseInt(localStorage.getItem("currentFishIndex")) >= menusLists[0].type.item[0].dishes.length)
                 localStorage.setItem("currentFishIndex", 0);
             fishCONTENT.appendChild(drawFishDish(menusLists[0].type.item[0].dishes, 
-                parseInt(localStorage.getItem("currentFishIndex"))+1 >= menusLists[0].type.item[0].dishes.length? 0:parseInt(localStorage.getItem("currentFishIndex"))
+                parseInt(localStorage.getItem("currentFishIndex")) >= menusLists[0].type.item[0].dishes.length? 0:parseInt(localStorage.getItem("currentFishIndex"))
                 , "menu-content-item"));
             fishCONTENT.children[0].remove();
             return;
@@ -2470,8 +2470,8 @@ function nextMenuDishListener() {
         fishCONTENT.children[0].style.marginLeft = "-200px";
         fishCONTENT.children[0].classList.add("inactive");
         fishCONTENT.children[1].className = "menu-content-item";
-        if(parseInt(localStorage.getItem("currentFishIndex"))+1 >= menusLists[0].type.item[0].dishes.length)
-            localStorage.setItem("currentFishIndex", -1);
+        if(parseInt(localStorage.getItem("currentFishIndex")) >= menusLists[0].type.item[0].dishes.length)
+            localStorage.setItem("currentFishIndex", 0);
         const si = setInterval(() => {
             fishCONTENT.appendChild(drawFishDish(menusLists[0].type.item[0].dishes, 
                 parseInt(localStorage.getItem("currentFishIndex"))+1 >= menusLists[0].type.item[0].dishes.length? 0:parseInt(localStorage.getItem("currentFishIndex"))+1
@@ -2485,8 +2485,8 @@ function nextMenuDishListener() {
         }, 1000);
     } // this means user clicked the fish menu dish
     else if(nextID === "next-crabs") {
-        if(parseInt(localStorage.getItem("currentCrabsIndex"))+1 >= menusLists[0].type.item[1].dishes.length)
-            localStorage.setItem("currentCrabsIndex", -1);
+        if(parseInt(localStorage.getItem("currentCrabsIndex")) >= menusLists[0].type.item[1].dishes.length)
+            localStorage.setItem("currentCrabsIndex", 0);
         const currentCrabsIndex = parseInt(localStorage.getItem("currentCrabsIndex"));
         localStorage.setItem("currentCrabsIndex", currentCrabsIndex+1);
         const fishDISH = MENU_MAIN_CONTAINER.children[0].children[1]; // display all child
@@ -2495,10 +2495,10 @@ function nextMenuDishListener() {
         // fishCONTENT.children[0].className = "inactive";
         // fishCONTENT.children[1].className = "menu-content-item";
         if(isMOBILE){
-            if(parseInt(localStorage.getItem("currentCrabsIndex"))+1 >= menusLists[0].type.item[1].dishes.length)
+            if(parseInt(localStorage.getItem("currentCrabsIndex")) >= menusLists[0].type.item[1].dishes.length)
                 localStorage.setItem("currentCrabsIndex", 0);
             fishCONTENT.appendChild(drawFishDish(menusLists[0].type.item[1].dishes, 
-                parseInt(localStorage.getItem("currentCrabsIndex"))+1 >= menusLists[0].type.item[1].dishes.length? 0:parseInt(localStorage.getItem("currentCrabsIndex"))
+                parseInt(localStorage.getItem("currentCrabsIndex")) >= menusLists[0].type.item[1].dishes.length? 0:parseInt(localStorage.getItem("currentCrabsIndex"))
                 , "menu-content-item"));
             fishCONTENT.children[0].remove();
             return;
@@ -2507,8 +2507,8 @@ function nextMenuDishListener() {
         fishCONTENT.children[0].classList.add("inactive");
         fishCONTENT.children[1].className = "menu-content-item";
         
-        if(parseInt(localStorage.getItem("currentCrabsIndex"))+1 >= menusLists[0].type.item[1].dishes.length)
-            localStorage.setItem("currentCrabsIndex", -1);
+        if(parseInt(localStorage.getItem("currentCrabsIndex")) >= menusLists[0].type.item[1].dishes.length)
+            localStorage.setItem("currentCrabsIndex", 0);
         const si = setInterval(() => {
             fishCONTENT.appendChild(drawFishDish(menusLists[0].type.item[1].dishes, 
                 parseInt(localStorage.getItem("currentCrabsIndex"))+1 >= menusLists[0].type.item[1].dishes.length? 0:parseInt(localStorage.getItem("currentCrabsIndex"))+1
@@ -2522,8 +2522,8 @@ function nextMenuDishListener() {
         }, 1000);
     } // this means user clicked the crabs menu dish
     else if(nextID === "next-shrimps") {
-        if(parseInt(localStorage.getItem("currentShrimpsIndex"))+1 >= menusLists[0].type.item[2].dishes.length)
-            localStorage.setItem("currentShrimpsIndex", -1);
+        if(parseInt(localStorage.getItem("currentShrimpsIndex")) >= menusLists[0].type.item[2].dishes.length)
+            localStorage.setItem("currentShrimpsIndex", 0);
         const currentShrimpsIndex = parseInt(localStorage.getItem("currentShrimpsIndex"));
         localStorage.setItem("currentShrimpsIndex", currentShrimpsIndex+1);
         const fishDISH = MENU_MAIN_CONTAINER.children[0].children[2]; // display all child
@@ -2532,10 +2532,10 @@ function nextMenuDishListener() {
         // fishCONTENT.children[0].className = "inactive";
         // fishCONTENT.children[1].className = "menu-content-item";
         if(isMOBILE){
-            if(parseInt(localStorage.getItem("currentShrimpsIndex"))+1 >= menusLists[0].type.item[2].dishes.length)
+            if(parseInt(localStorage.getItem("currentShrimpsIndex")) >= menusLists[0].type.item[2].dishes.length)
                 localStorage.setItem("currentShrimpsIndex", 0);
             fishCONTENT.appendChild(drawFishDish(menusLists[0].type.item[2].dishes, 
-                parseInt(localStorage.getItem("currentShrimpsIndex"))+1 >= menusLists[0].type.item[2].dishes.length? 0:parseInt(localStorage.getItem("currentShrimpsIndex"))
+                parseInt(localStorage.getItem("currentShrimpsIndex")) >= menusLists[0].type.item[2].dishes.length? 0:parseInt(localStorage.getItem("currentShrimpsIndex"))
                 , "menu-content-item"));
             fishCONTENT.children[0].remove();
             return;
@@ -2544,8 +2544,8 @@ function nextMenuDishListener() {
         fishCONTENT.children[0].classList.add("inactive");
         fishCONTENT.children[1].className = "menu-content-item";
         
-        if(parseInt(localStorage.getItem("currentShrimpsIndex"))+1 >= menusLists[0].type.item[2].dishes.length)
-            localStorage.setItem("currentShrimpsIndex", -1);
+        if(parseInt(localStorage.getItem("currentShrimpsIndex")) >= menusLists[0].type.item[2].dishes.length)
+            localStorage.setItem("currentShrimpsIndex", 0);
         const si = setInterval(() => {
             fishCONTENT.appendChild(drawFishDish(menusLists[0].type.item[2].dishes, 
                 parseInt(localStorage.getItem("currentShrimpsIndex"))+1 >= menusLists[0].type.item[2].dishes.length? 0:parseInt(localStorage.getItem("currentShrimpsIndex"))+1
@@ -2559,8 +2559,8 @@ function nextMenuDishListener() {
         }, 1000);
     } // this means user clicked the shrimps menu dish
     else if(nextID === "next-shellfish") {
-        if(parseInt(localStorage.getItem("currentShellFishIndex"))+1 >= menusLists[0].type.item[3].dishes.length)
-            localStorage.setItem("currentShellFishIndex", -1);
+        if(parseInt(localStorage.getItem("currentShellFishIndex")) >= menusLists[0].type.item[3].dishes.length)
+            localStorage.setItem("currentShellFishIndex", 0);
         const currentShellFishIndex = parseInt(localStorage.getItem("currentShellFishIndex"));
         localStorage.setItem("currentShellFishIndex", currentShellFishIndex+1);
         const fishDISH = MENU_MAIN_CONTAINER.children[0].children[3]; // display all child
@@ -2569,10 +2569,10 @@ function nextMenuDishListener() {
         // fishCONTENT.children[0].className = "inactive";
         // fishCONTENT.children[1].className = "menu-content-item";
         if(isMOBILE){
-            if(parseInt(localStorage.getItem("currentShellFishIndex"))+1 >= menusLists[0].type.item[3].dishes.length)
+            if(parseInt(localStorage.getItem("currentShellFishIndex")) >= menusLists[0].type.item[3].dishes.length)
                 localStorage.setItem("currentShellFishIndex", 0);
             fishCONTENT.appendChild(drawFishDish(menusLists[0].type.item[3].dishes, 
-                parseInt(localStorage.getItem("currentShellFishIndex"))+1 >= menusLists[0].type.item[3].dishes.length? 0:parseInt(localStorage.getItem("currentShellFishIndex"))
+                parseInt(localStorage.getItem("currentShellFishIndex")) >= menusLists[0].type.item[3].dishes.length? 0:parseInt(localStorage.getItem("currentShellFishIndex"))
                 , "menu-content-item"));
             fishCONTENT.children[0].remove();
             return;
@@ -2581,8 +2581,8 @@ function nextMenuDishListener() {
         fishCONTENT.children[0].classList.add("inactive");
         fishCONTENT.children[1].className = "menu-content-item";
         
-        if(parseInt(localStorage.getItem("currentShellFishIndex"))+1 >= menusLists[0].type.item[3].dishes.length)
-            localStorage.setItem("currentShellFishIndex", -1);
+        if(parseInt(localStorage.getItem("currentShellFishIndex")) >= menusLists[0].type.item[3].dishes.length)
+            localStorage.setItem("currentShellFishIndex", 0);
         const si = setInterval(() => {
             fishCONTENT.appendChild(drawFishDish(menusLists[0].type.item[3].dishes, 
                 parseInt(localStorage.getItem("currentShellFishIndex"))+1 >= menusLists[0].type.item[3].dishes.length? 0:parseInt(localStorage.getItem("currentShellFishIndex"))+1
@@ -2596,8 +2596,8 @@ function nextMenuDishListener() {
         }, 1000);
     } // this means user clicked the shrimps menu dish
     else if(nextID === "next-chicken") {
-        if(parseInt(localStorage.getItem("currentChickenIndex"))+1 >= menusLists[1].type.item[0].dishes.length)
-            localStorage.setItem("currentChickenIndex", -1);
+        if(parseInt(localStorage.getItem("currentChickenIndex")) >= menusLists[1].type.item[0].dishes.length)
+            localStorage.setItem("currentChickenIndex", 0);
         const currentChickenIndex = parseInt(localStorage.getItem("currentChickenIndex"));
         localStorage.setItem("currentChickenIndex", currentChickenIndex+1);
         const meatDISH = MENU_MAIN_CONTAINER.children[0].children[0]; // display all child
@@ -2606,10 +2606,10 @@ function nextMenuDishListener() {
         // meatCONTENT.children[0].className = "inactive";
         // meatCONTENT.children[1].className = "menu-content-item";
         if(isMOBILE) {
-            if(parseInt(localStorage.getItem("currentChickenIndex"))+1 >= menusLists[1].type.item[0].dishes.length)
+            if(parseInt(localStorage.getItem("currentChickenIndex")) >= menusLists[1].type.item[0].dishes.length)
                 localStorage.setItem("currentChickenIndex", 0);
             meatCONTENT.appendChild(drawMeatDish(menusLists[1].type.item[0].dishes, 
-                parseInt(localStorage.getItem("currentChickenIndex"))+1 >= menusLists[1].type.item[0].dishes.length? 0:parseInt(localStorage.getItem("currentChickenIndex"))
+                parseInt(localStorage.getItem("currentChickenIndex")) >= menusLists[1].type.item[0].dishes.length? 0:parseInt(localStorage.getItem("currentChickenIndex"))
                 , "menu-content-item"));
             meatCONTENT.children[0].remove();
             return;
@@ -2618,8 +2618,8 @@ function nextMenuDishListener() {
         meatCONTENT.children[0].classList.add("inactive");
         meatCONTENT.children[1].className = "menu-content-item";
         
-        if(parseInt(localStorage.getItem("currentChickenIndex"))+1 >= menusLists[1].type.item[0].dishes.length)
-            localStorage.setItem("currentChickenIndex", -1);
+        if(parseInt(localStorage.getItem("currentChickenIndex")) >= menusLists[1].type.item[0].dishes.length)
+            localStorage.setItem("currentChickenIndex", 0);
         const si = setInterval(() => {
             meatCONTENT.appendChild(drawMeatDish(menusLists[1].type.item[0].dishes, 
                 parseInt(localStorage.getItem("currentChickenIndex"))+1 >= menusLists[1].type.item[0].dishes.length? 0:parseInt(localStorage.getItem("currentChickenIndex"))+1
@@ -2633,8 +2633,8 @@ function nextMenuDishListener() {
         }, 1000);
     } // this means user clicked the shrimps menu dish
     else if(nextID === "next-pork") {
-        if(parseInt(localStorage.getItem("currentPorkIndex"))+1 >= menusLists[1].type.item[1].dishes.length)
-            localStorage.setItem("currentPorkIndex", -1);
+        if(parseInt(localStorage.getItem("currentPorkIndex")) >= menusLists[1].type.item[1].dishes.length)
+            localStorage.setItem("currentPorkIndex", 0);
         const currentPorkIndex = parseInt(localStorage.getItem("currentPorkIndex"));
         localStorage.setItem("currentPorkIndex", currentPorkIndex+1);
         const meatDISH = MENU_MAIN_CONTAINER.children[0].children[1]; // display all child
@@ -2643,10 +2643,10 @@ function nextMenuDishListener() {
         // meatCONTENT.children[0].className = "inactive";
         // meatCONTENT.children[1].className = "menu-content-item";
         if(isMOBILE) {
-            if(parseInt(localStorage.getItem("currentPorkIndex"))+1 >= menusLists[1].type.item[1].dishes.length)
+            if(parseInt(localStorage.getItem("currentPorkIndex")) >= menusLists[1].type.item[1].dishes.length)
                 localStorage.setItem("currentPorkIndex", 0);
             meatCONTENT.appendChild(drawMeatDish(menusLists[1].type.item[1].dishes, 
-                parseInt(localStorage.getItem("currentPorkIndex"))+1 >= menusLists[1].type.item[1].dishes.length? 0:parseInt(localStorage.getItem("currentPorkIndex"))
+                parseInt(localStorage.getItem("currentPorkIndex")) >= menusLists[1].type.item[1].dishes.length? 0:parseInt(localStorage.getItem("currentPorkIndex"))
                 , "menu-content-item"));
             meatCONTENT.children[0].remove();
             return;
@@ -2655,8 +2655,8 @@ function nextMenuDishListener() {
         meatCONTENT.children[0].classList.add("inactive");
         meatCONTENT.children[1].className = "menu-content-item";
         
-        if(parseInt(localStorage.getItem("currentPorkIndex"))+1 >= menusLists[1].type.item[1].dishes.length)
-            localStorage.setItem("currentPorkIndex", -1);
+        if(parseInt(localStorage.getItem("currentPorkIndex")) >= menusLists[1].type.item[1].dishes.length)
+            localStorage.setItem("currentPorkIndex", 0);
         const si = setInterval(() => {
             meatCONTENT.appendChild(drawMeatDish(menusLists[1].type.item[1].dishes, 
                 parseInt(localStorage.getItem("currentPorkIndex"))+1 >= menusLists[1].type.item[1].dishes.length? 0:parseInt(localStorage.getItem("currentPorkIndex"))+1
@@ -2670,8 +2670,8 @@ function nextMenuDishListener() {
         }, 1000);
     } // this means user clicked the shrimps menu dish
     else if(nextID === "next-beef") {
-        if(parseInt(localStorage.getItem("currentBeefIndex"))+1 >= menusLists[1].type.item[2].dishes.length)
-            localStorage.setItem("currentBeefIndex", -1);
+        if(parseInt(localStorage.getItem("currentBeefIndex")) >= menusLists[1].type.item[2].dishes.length)
+            localStorage.setItem("currentBeefIndex", 0);
         const currentBeefIndex = parseInt(localStorage.getItem("currentBeefIndex"));
         localStorage.setItem("currentBeefIndex", currentBeefIndex+1);
         const meatDISH = MENU_MAIN_CONTAINER.children[0].children[2]; // display all child
@@ -2680,10 +2680,10 @@ function nextMenuDishListener() {
         // meatCONTENT.children[0].className = "inactive";
         // meatCONTENT.children[1].className = "menu-content-item";
         if(isMOBILE) {
-            if(parseInt(localStorage.getItem("currentBeefIndex"))+1 >= menusLists[1].type.item[2].dishes.length)
+            if(parseInt(localStorage.getItem("currentBeefIndex")) >= menusLists[1].type.item[2].dishes.length)
                 localStorage.setItem("currentBeefIndex", 0);
             meatCONTENT.appendChild(drawMeatDish(menusLists[1].type.item[2].dishes, 
-                parseInt(localStorage.getItem("currentBeefIndex"))+1 >= menusLists[1].type.item[2].dishes.length? 0:parseInt(localStorage.getItem("currentBeefIndex"))
+                parseInt(localStorage.getItem("currentBeefIndex")) >= menusLists[1].type.item[2].dishes.length? 0:parseInt(localStorage.getItem("currentBeefIndex"))
                 , "menu-content-item"));
             meatCONTENT.children[0].remove();
             return;
@@ -2692,8 +2692,8 @@ function nextMenuDishListener() {
         meatCONTENT.children[0].classList.add("inactive");
         meatCONTENT.children[1].className = "menu-content-item";
         
-        if(parseInt(localStorage.getItem("currentBeefIndex"))+1 >= menusLists[1].type.item[2].dishes.length)
-            localStorage.setItem("currentBeefIndex", -1);
+        if(parseInt(localStorage.getItem("currentBeefIndex")) >= menusLists[1].type.item[2].dishes.length)
+            localStorage.setItem("currentBeefIndex", 0);
         const si = setInterval(() => {
             meatCONTENT.appendChild(drawMeatDish(menusLists[1].type.item[2].dishes, 
                 parseInt(localStorage.getItem("currentBeefIndex"))+1 >= menusLists[1].type.item[2].dishes.length? 0:parseInt(localStorage.getItem("currentBeefIndex"))+1
@@ -2707,8 +2707,8 @@ function nextMenuDishListener() {
         }, 1000);
     } // this means user clicked the shrimps menu dish
     else if(nextID === "next-desserts") {
-        if(parseInt(localStorage.getItem("currentDesserts"))+1 >= menusLists[3].type.item[0].dishes.length)
-            localStorage.setItem("currentDesserts", -1);
+        if(parseInt(localStorage.getItem("currentDesserts")) >= menusLists[3].type.item[0].dishes.length)
+            localStorage.setItem("currentDesserts", 0);
         const currentDesserts = parseInt(localStorage.getItem("currentDesserts"));
         localStorage.setItem("currentDesserts", currentDesserts+1);
         const meatDISH = MENU_MAIN_CONTAINER.children[0].children[0]; // display all child
@@ -2717,10 +2717,10 @@ function nextMenuDishListener() {
         // meatCONTENT.children[0].className = "inactive";
         // meatCONTENT.children[1].className = "menu-content-item";
         if(isMOBILE) {
-            if(parseInt(localStorage.getItem("currentDesserts"))+1 >= menusLists[3].type.item[0].dishes.length)
+            if(parseInt(localStorage.getItem("currentDesserts")) >= menusLists[3].type.item[0].dishes.length)
                 localStorage.setItem("currentDesserts", 0);
             meatCONTENT.appendChild(drawMeatDish(menusLists[3].type.item[0].dishes, 
-                parseInt(localStorage.getItem("currentDesserts"))+1 >= menusLists[3].type.item[0].dishes.length? 0:parseInt(localStorage.getItem("currentDesserts"))
+                parseInt(localStorage.getItem("currentDesserts")) >= menusLists[3].type.item[0].dishes.length? 0:parseInt(localStorage.getItem("currentDesserts"))
                 , "menu-content-item"));
             meatCONTENT.children[0].remove();
             return;
@@ -2729,8 +2729,8 @@ function nextMenuDishListener() {
         meatCONTENT.children[0].classList.add("inactive");
         meatCONTENT.children[1].className = "menu-content-item";
         
-        if(parseInt(localStorage.getItem("currentDesserts"))+1 >= menusLists[3].type.item[0].dishes.length)
-            localStorage.setItem("currentDesserts", -1);
+        if(parseInt(localStorage.getItem("currentDesserts")) >= menusLists[3].type.item[0].dishes.length)
+            localStorage.setItem("currentDesserts", 0);
 
         const si = setInterval(() => {
             meatCONTENT.appendChild(drawDessertDish(menusLists[3].type.item[0].dishes, 
@@ -2746,7 +2746,305 @@ function nextMenuDishListener() {
     } // this means user clicked the shrimps menu dish
 }
 function prevMenuDishListener() {
-    console.log(this)
+    const prevID = this.getAttribute("id");
+
+    if(prevID === "prev-fish") {
+        if(parseInt(localStorage.getItem("currentFishIndex")) >= menusLists[0].type.item[0].dishes.length)
+            localStorage.setItem("currentFishIndex", 0);
+        if(parseInt(localStorage.getItem("currentFishIndex")) <= 0)
+            return;
+        const currentFishIndex = parseInt(localStorage.getItem("currentFishIndex"));
+        localStorage.setItem("currentFishIndex", currentFishIndex-1);
+        const fishDISH = MENU_MAIN_CONTAINER.children[0].children[0]; // display all child
+        const fishCONTENT = fishDISH.children[0]; // the card fish dish item
+
+        // fishCONTENT.children[0].className = "inactive";
+        // fishCONTENT.children[1].className = "menu-content-item";
+        if(isMOBILE){
+            if(parseInt(localStorage.getItem("currentFishIndex")) >= menusLists[0].type.item[0].dishes.length)
+                localStorage.setItem("currentFishIndex", 0);
+            fishCONTENT.appendChild(drawFishDish(menusLists[0].type.item[0].dishes, 
+                parseInt(localStorage.getItem("currentFishIndex")) >= menusLists[0].type.item[0].dishes.length? 0:parseInt(localStorage.getItem("currentFishIndex"))
+                , "menu-content-item"));
+            fishCONTENT.children[0].remove();
+            return;
+        }
+        
+        fishCONTENT.children[1].style.marginRight = "-200px";
+        fishCONTENT.children[1].classList.add("inactive");
+
+        const si = setInterval(() => {
+            const sisi = setInterval(() => {
+                fishCONTENT.removeChild(fishCONTENT.children[1]);
+                fishCONTENT.prepend(drawFishDish(menusLists[0].type.item[0].dishes, 
+                    localStorage.getItem("currentFishIndex")
+                    , "menu-content-item"));
+                    fishCONTENT.children[1].className = "menu-content-next-item";
+
+                clearInterval(sisi);
+            }, 2000);
+            clearInterval(si)
+        }, 1000);
+    } // this means user clicked the fish menu dish
+    else if(prevID === "prev-crabs") {
+        if(parseInt(localStorage.getItem("currentCrabsIndex")) >= menusLists[0].type.item[1].dishes.length)
+            localStorage.setItem("currentCrabsIndex", 0);
+        if(parseInt(localStorage.getItem("currentCrabsIndex")) <= 0)
+            return;
+        const currentCrabsIndex = parseInt(localStorage.getItem("currentCrabsIndex"));
+        localStorage.setItem("currentCrabsIndex", currentCrabsIndex-1);
+        const fishDISH = MENU_MAIN_CONTAINER.children[0].children[1]; // display all child
+        const fishCONTENT = fishDISH.children[0]; // the card fish dish item
+
+        // fishCONTENT.children[0].className = "inactive";
+        // fishCONTENT.children[1].className = "menu-content-item";
+        if(isMOBILE){
+            if(parseInt(localStorage.getItem("currentCrabsIndex")) >= menusLists[0].type.item[1].dishes.length)
+                localStorage.setItem("currentCrabsIndex", 0);
+            fishCONTENT.appendChild(drawFishDish(menusLists[0].type.item[1].dishes, 
+                parseInt(localStorage.getItem("currentCrabsIndex")) >= menusLists[0].type.item[1].dishes.length? 0:parseInt(localStorage.getItem("currentCrabsIndex"))
+                , "menu-content-item"));
+            fishCONTENT.children[0].remove();
+            return;
+        }
+        fishCONTENT.children[1].style.marginRight = "-200px";
+        fishCONTENT.children[1].classList.add("inactive");
+
+        const si = setInterval(() => {
+            const sisi = setInterval(() => {
+                fishCONTENT.removeChild(fishCONTENT.children[1]);
+                fishCONTENT.prepend(drawFishDish(menusLists[0].type.item[1].dishes, 
+                    localStorage.getItem("currentCrabsIndex")
+                    , "menu-content-item"));
+                    fishCONTENT.children[1].className = "menu-content-next-item";
+
+                clearInterval(sisi);
+            }, 2000);
+            clearInterval(si)
+        }, 1000);
+    } // this means user clicked the crabs menu dish
+    else if(prevID === "prev-shrimps") {
+        if(parseInt(localStorage.getItem("currentShrimpsIndex")) >= menusLists[0].type.item[2].dishes.length)
+            localStorage.setItem("currentShrimpsIndex", 0);
+        if(parseInt(localStorage.getItem("currentShrimpsIndex")) <= 0)
+            return;
+        const currentShrimpsIndex = parseInt(localStorage.getItem("currentShrimpsIndex"));
+        localStorage.setItem("currentShrimpsIndex", currentShrimpsIndex-1);
+        const fishDISH = MENU_MAIN_CONTAINER.children[0].children[2]; // display all child
+        const fishCONTENT = fishDISH.children[0]; // the card fish dish item
+
+        // fishCONTENT.children[0].className = "inactive";
+        // fishCONTENT.children[1].className = "menu-content-item";
+        if(isMOBILE){
+            if(parseInt(localStorage.getItem("currentShrimpsIndex")) >= menusLists[0].type.item[2].dishes.length)
+                localStorage.setItem("currentShrimpsIndex", 0);
+            fishCONTENT.appendChild(drawFishDish(menusLists[0].type.item[2].dishes, 
+                parseInt(localStorage.getItem("currentShrimpsIndex")) >= menusLists[0].type.item[2].dishes.length? 0:parseInt(localStorage.getItem("currentShrimpsIndex"))
+                , "menu-content-item"));
+            fishCONTENT.children[0].remove();
+            return;
+        }
+        fishCONTENT.children[1].style.marginRight = "-200px";
+        fishCONTENT.children[1].classList.add("inactive");
+
+        const si = setInterval(() => {
+            const sisi = setInterval(() => {
+                fishCONTENT.removeChild(fishCONTENT.children[1]);
+                fishCONTENT.prepend(drawFishDish(menusLists[0].type.item[2].dishes, 
+                    localStorage.getItem("currentShrimpsIndex")
+                    , "menu-content-item"));
+                    fishCONTENT.children[1].className = "menu-content-next-item";
+
+                clearInterval(sisi);
+            }, 2000);
+            clearInterval(si)
+        }, 1000);
+    } // this means user clicked the shrimps menu dish
+    else if(prevID === "prev-shellfish") {
+        if(parseInt(localStorage.getItem("currentShellFishIndex")) >= menusLists[0].type.item[3].dishes.length)
+            localStorage.setItem("currentShellFishIndex", 0);
+        if(parseInt(localStorage.getItem("currentShellFishIndex")) <= 0)
+            return;
+        const currentShellFishIndex = parseInt(localStorage.getItem("currentShellFishIndex"));
+        localStorage.setItem("currentShellFishIndex", currentShellFishIndex-1);
+        const fishDISH = MENU_MAIN_CONTAINER.children[0].children[3]; // display all child
+        const fishCONTENT = fishDISH.children[0]; // the card fish dish item
+
+        // fishCONTENT.children[0].className = "inactive";
+        // fishCONTENT.children[1].className = "menu-content-item";
+        if(isMOBILE){
+            if(parseInt(localStorage.getItem("currentShellFishIndex")) >= menusLists[0].type.item[3].dishes.length)
+                localStorage.setItem("currentShellFishIndex", 0);
+            fishCONTENT.appendChild(drawFishDish(menusLists[0].type.item[3].dishes, 
+                parseInt(localStorage.getItem("currentShellFishIndex")) >= menusLists[0].type.item[3].dishes.length? 0:parseInt(localStorage.getItem("currentShellFishIndex"))
+                , "menu-content-item"));
+            fishCONTENT.children[0].remove();
+            return;
+        }
+        fishCONTENT.children[1].style.marginRight = "-200px";
+        fishCONTENT.children[1].classList.add("inactive");
+
+        const si = setInterval(() => {
+            const sisi = setInterval(() => {
+                fishCONTENT.removeChild(fishCONTENT.children[1]);
+                fishCONTENT.prepend(drawFishDish(menusLists[0].type.item[3].dishes, 
+                    localStorage.getItem("currentShellFishIndex")
+                    , "menu-content-item"));
+                    fishCONTENT.children[1].className = "menu-content-next-item";
+
+                clearInterval(sisi);
+            }, 2000);
+            clearInterval(si)
+        }, 1000);
+    } // this means user clicked the shrimps menu dish
+    else if(prevID === "prev-chicken") {
+        if(parseInt(localStorage.getItem("currentChickenIndex")) >= menusLists[1].type.item[0].dishes.length)
+            localStorage.setItem("currentChickenIndex", 0);
+        if(parseInt(localStorage.getItem("currentChickenIndex")) <= 0)
+            return;
+        const currentChickenIndex = parseInt(localStorage.getItem("currentChickenIndex"));
+        localStorage.setItem("currentChickenIndex", currentChickenIndex-1);
+        const meatDISH = MENU_MAIN_CONTAINER.children[0].children[0]; // display all child
+        const meatCONTENT = meatDISH.children[0]; // the card fish dish item
+
+        // meatCONTENT.children[0].className = "inactive";
+        // meatCONTENT.children[1].className = "menu-content-item";
+        if(isMOBILE) {
+            if(parseInt(localStorage.getItem("currentChickenIndex")) >= menusLists[1].type.item[0].dishes.length)
+                localStorage.setItem("currentChickenIndex", 0);
+            meatCONTENT.appendChild(drawMeatDish(menusLists[1].type.item[0].dishes, 
+                parseInt(localStorage.getItem("currentChickenIndex")) >= menusLists[1].type.item[0].dishes.length? 0:parseInt(localStorage.getItem("currentChickenIndex"))
+                , "menu-content-item"));
+            meatCONTENT.children[0].remove();
+            return;
+        }
+        meatCONTENT.children[1].style.marginRight = "-200px";
+        meatCONTENT.children[1].classList.add("inactive");
+
+        const si = setInterval(() => {
+            const sisi = setInterval(() => {
+                meatCONTENT.removeChild(meatCONTENT.children[1]);
+                meatCONTENT.prepend(drawFishDish(menusLists[1].type.item[0].dishes, 
+                    localStorage.getItem("currentChickenIndex")
+                    , "menu-content-item"));
+                    meatCONTENT.children[1].className = "menu-content-next-item";
+
+                clearInterval(sisi);
+            }, 2000);
+            clearInterval(si)
+        }, 1000);
+    } // this means user clicked the shrimps menu dish
+    else if(prevID === "prev-pork") {
+        if(parseInt(localStorage.getItem("currentPorkIndex")) >= menusLists[1].type.item[1].dishes.length)
+            localStorage.setItem("currentPorkIndex", 0);
+        if(parseInt(localStorage.getItem("currentPorkIndex")) <= 0)
+            return;
+        const currentPorkIndex = parseInt(localStorage.getItem("currentPorkIndex"));
+        localStorage.setItem("currentPorkIndex", currentPorkIndex-1);
+        const meatDISH = MENU_MAIN_CONTAINER.children[0].children[1]; // display all child
+        const meatCONTENT = meatDISH.children[0]; // the card fish dish item
+
+        // meatCONTENT.children[0].className = "inactive";
+        // meatCONTENT.children[1].className = "menu-content-item";
+        if(isMOBILE) {
+            if(parseInt(localStorage.getItem("currentPorkIndex")) >= menusLists[1].type.item[1].dishes.length)
+                localStorage.setItem("currentPorkIndex", 0);
+            meatCONTENT.appendChild(drawMeatDish(menusLists[1].type.item[1].dishes, 
+                parseInt(localStorage.getItem("currentPorkIndex")) >= menusLists[1].type.item[1].dishes.length? 0:parseInt(localStorage.getItem("currentPorkIndex"))
+                , "menu-content-item"));
+            meatCONTENT.children[0].remove();
+            return;
+        }
+        meatCONTENT.children[1].style.marginRight = "-200px";
+        meatCONTENT.children[1].classList.add("inactive");
+
+        const si = setInterval(() => {
+            const sisi = setInterval(() => {
+                meatCONTENT.removeChild(meatCONTENT.children[1]);
+                meatCONTENT.prepend(drawFishDish(menusLists[1].type.item[1].dishes, 
+                    localStorage.getItem("currentPorkIndex")
+                    , "menu-content-item"));
+                    meatCONTENT.children[1].className = "menu-content-next-item";
+
+                clearInterval(sisi);
+            }, 2000);
+            clearInterval(si)
+        }, 1000);
+    } // this means user clicked the shrimps menu dish
+    else if(prevID === "prev-beef") {
+        if(parseInt(localStorage.getItem("currentBeefIndex")) >= menusLists[1].type.item[2].dishes.length)
+            localStorage.setItem("currentBeefIndex", 0);
+        if(parseInt(localStorage.getItem("currentBeefIndex")) <= 0)
+            return;
+        const currentBeefIndex = parseInt(localStorage.getItem("currentBeefIndex"));
+        localStorage.setItem("currentBeefIndex", currentBeefIndex-1);
+        const meatDISH = MENU_MAIN_CONTAINER.children[0].children[2]; // display all child
+        const meatCONTENT = meatDISH.children[0]; // the card fish dish item
+
+        // meatCONTENT.children[0].className = "inactive";
+        // meatCONTENT.children[1].className = "menu-content-item";
+        if(isMOBILE) {
+            if(parseInt(localStorage.getItem("currentBeefIndex")) >= menusLists[1].type.item[2].dishes.length)
+                localStorage.setItem("currentBeefIndex", 0);
+            meatCONTENT.appendChild(drawMeatDish(menusLists[1].type.item[2].dishes, 
+                parseInt(localStorage.getItem("currentBeefIndex")) >= menusLists[1].type.item[2].dishes.length? 0:parseInt(localStorage.getItem("currentBeefIndex"))
+                , "menu-content-item"));
+            meatCONTENT.children[0].remove();
+            return;
+        }
+        meatCONTENT.children[1].style.marginRight = "-200px";
+        meatCONTENT.children[1].classList.add("inactive");
+
+        const si = setInterval(() => {
+            const sisi = setInterval(() => {
+                meatCONTENT.removeChild(meatCONTENT.children[1]);
+                meatCONTENT.prepend(drawFishDish(menusLists[1].type.item[2].dishes, 
+                    localStorage.getItem("currentBeefIndex")
+                    , "menu-content-item"));
+                    meatCONTENT.children[1].className = "menu-content-next-item";
+
+                clearInterval(sisi);
+            }, 2000);
+            clearInterval(si)
+        }, 1000);
+    } // this means user clicked the shrimps menu dish
+    else if(prevID === "prev-desserts") {
+        if(parseInt(localStorage.getItem("currentDesserts")) >= menusLists[3].type.item[0].dishes.length)
+            localStorage.setItem("currentDesserts", 0);
+        if(parseInt(localStorage.getItem("currentDesserts")) <= 0)
+            return;
+        const currentDesserts = parseInt(localStorage.getItem("currentDesserts"));
+        localStorage.setItem("currentDesserts", currentDesserts-1);
+        const meatDISH = MENU_MAIN_CONTAINER.children[0].children[0]; // display all child
+        const meatCONTENT = meatDISH.children[0] // the card fish dish item
+
+        // meatCONTENT.children[0].className = "inactive";
+        // meatCONTENT.children[1].className = "menu-content-item";
+        if(isMOBILE) {
+            if(parseInt(localStorage.getItem("currentDesserts")) >= menusLists[3].type.item[0].dishes.length)
+                localStorage.setItem("currentDesserts", 0);
+            meatCONTENT.appendChild(drawMeatDish(menusLists[3].type.item[0].dishes, 
+                parseInt(localStorage.getItem("currentDesserts")) >= menusLists[3].type.item[0].dishes.length? 0:parseInt(localStorage.getItem("currentDesserts"))
+                , "menu-content-item"));
+            meatCONTENT.children[0].remove();
+            return;
+        }
+        meatCONTENT.children[1].style.marginRight = "-200px";
+        meatCONTENT.children[1].classList.add("inactive");
+
+        const si = setInterval(() => {
+            const sisi = setInterval(() => {
+                meatCONTENT.removeChild(meatCONTENT.children[1]);
+                meatCONTENT.prepend(drawFishDish(menusLists[3].type.item[0].dishes, 
+                    localStorage.getItem("currentDesserts")
+                    , "menu-content-item"));
+                    meatCONTENT.children[1].className = "menu-content-next-item";
+
+                clearInterval(sisi);
+            }, 2000);
+            clearInterval(si)
+        }, 1000);
+    } // this means user clicked the shrimps menu dish
 }
 
 function viewDISH(dish) {
@@ -2769,6 +3067,7 @@ function addDishToOrder(dish) {
             localStorage.setItem("orders", JSON.stringify(RESTO_STORAGE.addNewDish(orders, dish)));
 
             RESPONSE_MESSAGES.textContent = "New order was added!";
+            RESPONSE_MESSAGES.style.zIndex = "1";
             RESPONSE_MESSAGES.style.opacity = 1;
             RESPONSE_MESSAGES.style.backgroundColor = "#76eba5";
             RESPONSE_MESSAGES.style.transition = "all 0s";
@@ -2781,6 +3080,7 @@ function addDishToOrder(dish) {
         else {
             localStorage.setItem("orders", JSON.stringify(orders));
             RESPONSE_MESSAGES.textContent = "This order has been added already!";
+            RESPONSE_MESSAGES.style.zIndex = "1";
             RESPONSE_MESSAGES.style.opacity = 1;
             RESPONSE_MESSAGES.style.backgroundColor = "#ffb34f";
             RESPONSE_MESSAGES.style.transition = "all 0.8s";
@@ -2795,6 +3095,7 @@ function addDishToOrder(dish) {
         orders.push(dish);
         localStorage.setItem("orders", JSON.stringify(orders));
         RESPONSE_MESSAGES.textContent = "New order was added!";
+        RESPONSE_MESSAGES.style.zIndex = "1";
         RESPONSE_MESSAGES.style.opacity = 1;
         RESPONSE_MESSAGES.style.backgroundColor = "#76eba5";
         RESPONSE_MESSAGES.style.transition = "all 0s";

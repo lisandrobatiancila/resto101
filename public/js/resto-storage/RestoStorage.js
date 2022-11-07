@@ -16,4 +16,11 @@ class RestoStorage {
         }
         return `00`;
     }
+    removeDish(id) {
+        let orders = JSON.parse(localStorage.getItem("orders"));
+
+        const neworders = orders.filter(order => order.id != id);
+
+        return neworders;
+    }
 }

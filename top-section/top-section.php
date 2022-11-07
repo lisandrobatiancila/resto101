@@ -10,7 +10,7 @@
         </ul>
         <ul>
             <li>
-                <a href="#" class="text-capitalize">
+                <a href="/restaurant/view-order/view-order.php" class="text-capitalize">
                     orders
                 </a>
                 <span class="order-list" id="order-list">0</span>
