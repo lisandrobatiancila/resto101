@@ -135,8 +135,8 @@ function nextCustomerReview(currIndex, nextIndex) {
         CUST_CURR_REV_HEAD.style.padding = "10px";
         CUST_CURR_REV_HEAD.style.textAlign = "center";
         USER_IMG.src = customerReview[currIndex].gender === "male"?
-            "http://localhost/restaurant/public/images/man.png":
-            "http://localhost/restaurant/public/images/girl.png";
+            "https://resto-mock.herokuapp.com/public/images/man.png":
+            "https://resto-mock.herokuapp.com/public/images/girl.png";
         USER_IMG.style.width = "70px";
         USER_IMG.style.height = "70px";
 
@@ -156,7 +156,7 @@ function nextCustomerReview(currIndex, nextIndex) {
             CUST_REVIEW_STAR.style.width = "20px";
             CUST_REVIEW_STAR.style.height = "20px";
             CUST_REVIEW_STAR.style.marginLeft = "3px";
-            CUST_REVIEW_STAR.src = "http://localhost/restaurant/public/images/star.png";
+            CUST_REVIEW_STAR.src = "https://resto-mock.herokuapp.com/public/images/star.png";
             CUST_REVIEW_STAR_CONT.appendChild(CUST_REVIEW_STAR);
         }
 
@@ -182,8 +182,8 @@ function nextCustomerReview(currIndex, nextIndex) {
         CUST_CURR_REV_HEAD.style.padding = "10px";
         CUST_CURR_REV_HEAD.style.textAlign = "center";
         USER_IMG.src = customerReview[nextIndex].gender === "male"?
-            "http://localhost/restaurant/public/images/man.png":
-            "http://localhost/restaurant/public/images/girl.png";
+            "https://resto-mock.herokuapp.com/public/images/man.png":
+            "https://resto-mock.herokuapp.com/public/images/girl.png";
         USER_IMG.style.width = "70px";
         USER_IMG.style.height = "70px";
 
@@ -234,8 +234,8 @@ function nextCustomerReview(currIndex, nextIndex) {
         CUST_CURR_REV_HEAD.style.padding = "10px";
         CUST_CURR_REV_HEAD.style.textAlign = "center";
         USER_IMG.src = customerReview[currIndex].gender === "male"?
-            "http://localhost/restaurant/public/images/man.png":
-            "http://localhost/restaurant/public/images/girl.png";
+            "https://resto-mock.herokuapp.com/public/images/man.png":
+            "https://resto-mock.herokuapp.com/public/images/girl.png";
         USER_IMG.style.width = "70px";
         USER_IMG.style.height = "70px";
         
@@ -258,7 +258,7 @@ function nextCustomerReview(currIndex, nextIndex) {
             CUST_REVIEW_STAR.style.width = "20px";
             CUST_REVIEW_STAR.style.height = "20px";
             CUST_REVIEW_STAR.style.marginLeft = "3px";
-            CUST_REVIEW_STAR.src = "http://localhost/restaurant/public/images/star.png";
+            CUST_REVIEW_STAR.src = "https://resto-mock.herokuapp.com/public/images/star.png";
             CUST_REVIEW_STAR_CONT.appendChild(CUST_REVIEW_STAR);
         }
 
@@ -284,8 +284,8 @@ function nextCustomerReview(currIndex, nextIndex) {
                 CUST_CURR_REV_HEAD.style.padding = "10px";
                 CUST_CURR_REV_HEAD.style.textAlign = "center";
                 USER_IMG.src = customerReview[nextIndex].gender === "male"?
-                    "http://localhost/restaurant/public/images/man.png":
-                    "http://localhost/restaurant/public/images/girl.png";
+                    "https://resto-mock.herokuapp.com/public/images/man.png":
+                    "https://resto-mock.herokuapp.com/public/images/girl.png";
                 USER_IMG.style.width = "70px";
                 USER_IMG.style.height = "70px";
 
@@ -331,8 +331,8 @@ function drawNextReview(currIndex, nextIndex) {
     CUST_CURR_REV_HEAD.style.padding = "10px";
     CUST_CURR_REV_HEAD.style.textAlign = "center";
     USER_IMG.src = customerReview[currIndex].gender === "male"?
-        "http://localhost/restaurant/public/images/man.png":
-        "http://localhost/restaurant/public/images/girl.png";
+        "https://resto-mock.herokuapp.com/public/images/man.png":
+        "https://resto-mock.herokuapp.com/public/images/girl.png";
     USER_IMG.style.width = "70px";
     USER_IMG.style.height = "70px";
 
@@ -352,7 +352,7 @@ function drawNextReview(currIndex, nextIndex) {
         CUST_REVIEW_STAR.style.width = "20px";
         CUST_REVIEW_STAR.style.height = "20px";
         CUST_REVIEW_STAR.style.marginLeft = "3px";
-        CUST_REVIEW_STAR.src = "http://localhost/restaurant/public/images/star.png";
+        CUST_REVIEW_STAR.src = "https://resto-mock.herokuapp.com/public/images/star.png";
         CUST_REVIEW_STAR_CONT.appendChild(CUST_REVIEW_STAR);
     }
 
@@ -380,8 +380,8 @@ function drawNextReview(currIndex, nextIndex) {
         CUST_CURR_REV_HEAD.style.padding = "10px";
         CUST_CURR_REV_HEAD.style.textAlign = "center";
         USER_IMG.src = customerReview[nextIndex].gender === "male"?
-            "http://localhost/restaurant/public/images/man.png":
-            "http://localhost/restaurant/public/images/girl.png";
+            "https://resto-mock.herokuapp.com/public/images/man.png":
+            "https://resto-mock.herokuapp.com/public/images/girl.png";
         USER_IMG.style.width = "70px";
         USER_IMG.style.height = "70px";
 
@@ -429,8 +429,8 @@ function drawPrevReview(currIndex) {
     CUST_CURR_REV_HEAD.style.padding = "10px";
     CUST_CURR_REV_HEAD.style.textAlign = "center";
     USER_IMG.src = customerReview[currIndex].gender === "male"?
-        "http://localhost/restaurant/public/images/man.png":
-        "http://localhost/restaurant/public/images/girl.png";
+        "https://resto-mock.herokuapp.com/public/images/man.png":
+        "https://resto-mock.herokuapp.com/public/images/girl.png";
     USER_IMG.style.width = "70px";
     USER_IMG.style.height = "70px";
     USER_NAME_SPAN.textContent = customerReview[currIndex].name;
