@@ -11,9 +11,9 @@
         <div class="my-projects">
             <h3 class="text-capitalize">my projects</h3>
             <ul>
-                <li><a href="#">recipe</a></li>
-                <li><a href="#">mobile-mock</a></li>
-                <li><a href="#">restaurant</a></li>
+                <li><a href="https://recipe101.herokuapp.com">recipe</a></li>
+                <li><a href="https://resto-mock.herokuapp.com">restaurant</a></li>
+                <li><a href="https://mobile-mock101.herokuapp.com">mobile-mock</a></li>
             </ul>
         </div>
 
