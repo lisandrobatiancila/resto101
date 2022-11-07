@@ -1,6 +1,6 @@
 const topMenuData = [
     {
-        id: 2000021, title: "adobo", img: "http://localhost/restaurant/public/images/adobo.jpg", price: 200,
+        id: 2000021, title: "adobo", img: "https://resto-mock.herokuapp.com/public/images/adobo.jpg", price: 200,
         ingredients: [
             "2 lbs pork belly",
             "2 tablespoon garlic minced or crushed",
@@ -33,7 +33,7 @@ const topMenuData = [
         }
     },
     {
-        id: 2000026, title: "sisig", img: "http://localhost/restaurant/public/images/sisig.jpg", price: 300,
+        id: 2000026, title: "sisig", img: "https://resto-mock.herokuapp.com/public/images/sisig.jpg", price: 300,
         ingredients: [
             "1 lb. pig ears",
             "1 1/2 lb pork belly",
@@ -70,7 +70,7 @@ const topMenuData = [
         }
     },
     {
-        id: 2000023, title: "sinigang", img: "http://localhost/restaurant/public/images/sinigang.png", price: 180,
+        id: 2000023, title: "sinigang", img: "https://resto-mock.herokuapp.com/public/images/sinigang.png", price: 180,
         ingredients: [
             "2 lbs pork belly or buto-buto",
             "1 bunch spinach or kang-kong",
