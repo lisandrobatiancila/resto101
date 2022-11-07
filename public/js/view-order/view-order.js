@@ -130,6 +130,8 @@ function removeOrders () {
     RESPONSE_MESSAGES.style.backgroundColor = "#ffb34f";
     RESPONSE_MESSAGES.style.transition = "all 0.8s";
 
+    ORDER_LIST.textContent = RESTO_STORAGE.countedOrders();
+    
     const si = setInterval(() => {
         RESPONSE_MESSAGES.style.opacity = 0;
         clearInterval(si);
