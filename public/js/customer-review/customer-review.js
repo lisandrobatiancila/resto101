@@ -74,7 +74,7 @@ let CURR_INDEX = 0;
 let NEXT_INDEX = 0;
 let PREV_INDEX_LISTS = [];
 
-NEXT_REV_CONT.append(drawNextReview(CURR_INDEX, CURR_INDEX+1));
+NEXT_REV_CONT.appendChild(drawNextReview(CURR_INDEX, CURR_INDEX+1));
 
 NEXT.addEventListener("click", function() {
     if(NEXT_INDEX >= customerReview.length)
@@ -85,6 +85,8 @@ NEXT.addEventListener("click", function() {
     if(NEXT_INDEX <= customerReview.length){
         NEXT_REV_CONT.appendChild(drawNextReview(CURR_INDEX, NEXT_INDEX));
         if(isINMOBILE)
+            PREV_REV_CONT.appendChild(drawPrevReview(PREV_INDEX_LISTS[PREV_INDEX_LISTS.length-1]));
+        else
             PREV_REV_CONT.appendChild(drawPrevReview(PREV_INDEX_LISTS[PREV_INDEX_LISTS.length-1]));
     }
 });
@@ -352,7 +354,7 @@ function drawNextReview(currIndex, nextIndex) {
         CUST_REVIEW_STAR.style.marginLeft = "3px";
         CUST_REVIEW_STAR.src = "http://localhost/restaurant/public/images/star.png";
         CUST_REVIEW_STAR_CONT.appendChild(CUST_REVIEW_STAR);
-        }
+    }
 
     CUST_CURR_REV_BODY.appendChild(CUST_REVIEW_TAG);
     CUST_CURR_REV_BODY.appendChild(CUST_REVIEW_STAR_CONT);
@@ -398,13 +400,18 @@ function drawNextReview(currIndex, nextIndex) {
 
         CUST_NEXT_REV.appendChild(CUST_CURR_REV_HEAD);
         CUST_NEXT_REV.appendChild(CUST_CURR_REV_BODY);
+
+        FINALCONTAINER.appendChild(CUST_CURR_REV);
         FINALCONTAINER.appendChild(CUST_NEXT_REV);
     }
-    
+    else {
         FINALCONTAINER.appendChild(CUST_CURR_REV);
+    }
+
         // NEXT_REV_CONT.appendChild(CUST_NEXT_REV);
     return FINALCONTAINER
 }
+
 function drawPrevReview(currIndex) {
     while(PREV_REV_CONT.children.length > 0) {
         PREV_REV_CONT.removeChild(PREV_REV_CONT.children[PREV_REV_CONT.children.length-1]);

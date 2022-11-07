@@ -4,8 +4,8 @@
         <div class="special-thanks">
             <h3 class="text-capitalize">special thanks</h3>
             <ul>
-                <li><a href="#">freeicon</a></li>
-                <li><a href="#">freepik</a></li>
+                <li><a href="https://www.flaticon.com/">flaticon</a></li>
+                <li><a href="https://www.freepik.com/">freepik</a></li>
             </ul>
         </div>
         <div class="my-projects">
