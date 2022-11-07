@@ -4,7 +4,7 @@ const ORDER_CONTAINER = document.getElementById("order-container");
 if(!localStorage.getItem("doesPaymentCollapse"))
     localStorage.setItem("doesPaymentCollapse", false);
 
-if(orders.length > 0) {
+if(orders && orders.length > 0) {
     ORDER_CONTAINER.appendChild(drawOrders());
     
     const ORDER_PAYMENT_CONTAINER = document.createElement("div");
