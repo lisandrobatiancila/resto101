@@ -4,13 +4,13 @@
             <span class="menu"></span>
         </div>
         <ul>
-            <li><a href="/restaurant/index.php" class="text-capitalize">home</a></li>
+            <li><a href="/index.php" class="text-capitalize">home</a></li>
             <li><a href="#" class="text-capitalize">about</a></li>
-            <li><a href="/restaurant/menu-lists/menu-lists.php" class="text-capitalize">menu</a></li>
+            <li><a href="/menu-lists/menu-lists.php" class="text-capitalize">menu</a></li>
         </ul>
         <ul>
             <li>
-                <a href="/restaurant/view-order/view-order.php" class="text-capitalize">
+                <a href="/view-order/view-order.php" class="text-capitalize">
                     orders
                 </a>
                 <span class="order-list" id="order-list">0</span>

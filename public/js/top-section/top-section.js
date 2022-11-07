@@ -41,7 +41,7 @@ function topSectionAction() {
     const btnText = this.innerHTML;
 
     if(btnText === 'order online')
-        window.location.href = '/restaurant/order-online/order-online.php';
+        window.location.href = '/order-online/order-online.php';
 }
 
 function toggleNavigation() {
