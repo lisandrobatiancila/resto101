@@ -148,6 +148,7 @@ function collapsePayment () {
 
     if(!JSON.parse(localStorage.getItem("doesPaymentCollapse"))){
         ORDER_PAYMENT_CONTAINER.className = "collapse";
+        ORDER_PAYMENT_CONTAINER.style.zIndex = "1";
 
         COLLAPSE_PAYMENT_PTAG.textContent = "open payment";
         localStorage.setItem("doesPaymentCollapse", true);
