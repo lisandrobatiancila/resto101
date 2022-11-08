@@ -52,6 +52,7 @@ else {
     ORDER_CONTAINER.appendChild(ORDER_MESSAGE_IF_EMPTY);
 
     RESPONSE_MESSAGES.textContent = "No order to show!";
+    RESPONSE_MESSAGES.style.zIndex = "1";
     RESPONSE_MESSAGES.style.opacity = 1;
     RESPONSE_MESSAGES.style.backgroundColor = "#ffb34f";
     RESPONSE_MESSAGES.style.transition = "all 0.8s";

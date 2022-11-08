@@ -5,7 +5,6 @@
         </div>
         <ul>
             <li><a href="/index.php" class="text-capitalize">home</a></li>
-            <li><a href="#" class="text-capitalize">about</a></li>
             <li><a href="/menu-lists/menu-lists.php" class="text-capitalize">menu</a></li>
         </ul>
         <ul>
