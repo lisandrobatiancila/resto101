@@ -84,7 +84,7 @@
     padding-top: 300%;
     padding-left: 300%;
     margin-top: -100px;
-    margin-left: -200px !important;
+    margin-left: -500px !important;
     position: absolute;
     opacity: 0;
     transition: all 0.8s;
@@ -113,7 +113,7 @@
     background-color: var(--ddColor);
     padding-top: 300%;
     padding-left: 350%;
-    margin-left: -200px !important;
+    margin-left: -500px !important;
     margin-top: -100px;
     opacity: 0;
     transition: all 0.8s;
