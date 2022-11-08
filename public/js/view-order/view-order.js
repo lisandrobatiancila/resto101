@@ -1,5 +1,6 @@
 const orders = JSON.parse(localStorage.getItem("orders"));
 const ORDER_CONTAINER = document.getElementById("order-container");
+const FOOTER = document.getElementById("footer");
 
 if(!localStorage.getItem("doesPaymentCollapse"))
     localStorage.setItem("doesPaymentCollapse", false);
@@ -61,6 +62,8 @@ else {
         RESPONSE_MESSAGES.style.opacity = 0;
         clearInterval(si);
     }, 3000);
+    FOOTER.style.position = "absolute";
+    FOOTER.style.bottom = "0";
 }
 
 function drawOrders () {

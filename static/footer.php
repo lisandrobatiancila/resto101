@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer" id="footer">
     <div class="response-messages" id="response-messages" style="z-index: -1"></div>
     <div class="footer-content">
         <div class="special-thanks">
